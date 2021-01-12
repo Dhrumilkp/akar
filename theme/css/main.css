@@ -16883,7 +16883,7 @@ input[type="number"] {
 
 .category-nav {
   position: relative;
-  max-width: 270px;
+  /* max-width: 270px; */
   z-index: 180; }
   .category-nav .category-trigger {
     position: relative;
@@ -17072,7 +17072,7 @@ input[type="number"] {
   border-bottom: 1px solid #fff; }
 
 .mobile-header .site-brand {
-  padding: 20px 0 20px 0; }
+  padding: 0px 0 0px 0; }
 
 .mobile-header .header-links {
   display: -webkit-box;
