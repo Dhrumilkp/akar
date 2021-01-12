@@ -23,6 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
+$config['sess_save_path'] = sys_get_temp_dir();
 $config['base_url'] = 'https://akarpublication.herokuapp.com/';
 
 /*
