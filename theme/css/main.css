@@ -31407,7 +31407,10 @@ only screen and (max-width: 767px) {
 .accordion .card .card-header h5 {
 	margin: 0;
 }
-
+em{
+	font-size: small;
+    color: red;	
+}
 .accordion .card .card-header h5 button {
 	border: none;
 	background-color: transparent;
