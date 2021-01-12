@@ -53,3 +53,4 @@ $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['admin'] = 'Admin/Admin_controller/admin';
+$route['xxauth'] = 'Admin/Admin_controller/authuser';

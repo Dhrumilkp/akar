@@ -12,7 +12,10 @@ body {
   padding-bottom: 40px;
   background-color: #fff;
 }
-
+em{
+	font-size: small;
+  color: red;	
+}
 .form-signin {
   width: 100%;
   max-width: 420px;
@@ -120,4 +123,13 @@ body {
   .form-label-group input::-ms-input-placeholder {
     color: #777;
   }
+}
+.mt-2{
+  margin-top: 2rem;
+}
+.mb-2{
+  margin-bottom: 2rem;
+}
+.mb-4{
+  margin-bottom: 4rem;
 }
