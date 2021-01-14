@@ -1,1 +1,1 @@
-const url = 'http://localhost/akar/';
+const url = 'https://akarpublication.herokuapp.com/';
