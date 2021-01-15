@@ -193,42 +193,20 @@
                             "slidesToShow": 1,
                             "dots":true
                             }'>
-                <div class="single-slide bg-shade-whisper  ">
-                    <div class="container">
-                        <div class="home-content text-center text-sm-left position-relative">
-                            <div class="hero-partial-image image-right">
-                                <img src="theme/image/bg-images/home-slider-2-ai.png" alt="">
-                            </div>
-                            <div class="row no-gutters ">
-                                <div class="col-xl-6 col-md-6 col-sm-7">
-                                    <div class="home-content-inner content-left-side">
-                                        <h1>H.G. Wells<br>
-                                            De Vengeance</h1>
-                                        <h2>Cover Up Front Of Books and Leave Summary</h2>
-                                    </div>
+                <?php 
+                    if(!empty($get_slider_data))
+                    {
+                        foreach($get_slider_data as $row)
+                        {
+                            ?>
+                                <div class="single-slide" style="background:url(
+                                    'uploads/Slider/<?php echo $row['sliders_path']; ?>'
+                                ); height:500px;background-size:cover;">
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="single-slide bg-ghost-white">
-                    <div class="container">
-                        <div class="home-content text-center text-sm-left position-relative">
-                            <div class="hero-partial-image image-left">
-                                <img src="theme/image/bg-images/home-slider-1-ai.png" alt="">
-                            </div>
-                            <div class="row align-items-center justify-content-start justify-content-md-end">
-                                <div class="col-lg-6 col-xl-7 col-md-6 col-sm-7">
-                                    <div class="home-content-inner content-right-side">
-                                        <h1>J.D. Kurtness <br>
-                                            De Vengeance</h1>
-                                        <h2>Cover Up Front Of Books and Leave Summary</h2>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                            <?
+                        }
+                    }
+                ?>
             </div>
         </section>
         <!--=================================

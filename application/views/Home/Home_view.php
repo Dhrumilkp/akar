@@ -112,10 +112,19 @@
 								<h6>Header Slider Image</h6>
 								<div class="display-4 fs-4 mb-2 font-weight-normal text-sans-serif text-warning" id="total_category_count">2</div>
 									<div class="d-flex">
-										<img src="theme/image/bg-images/home-slider-2-ai.png" id="cover_slider_1" class="mr-5" width="100" height="100"/>
-										<img src="theme/image/bg-images/home-slider-1-ai.png" id="cover_slider_2" width="100" height="100"/>
+									<?php 
+										if(!empty($get_slider_data))
+										{
+											foreach($get_slider_data as $row)
+											{
+												?>
+													<img src="uploads/Slider/<?php echo $row['sliders_path']; ?>" id="cover_slider_1" class="mr-5" width="100" height="100"/>
+												<?
+											}
+										}
+									?>
 									</div>
-									<a class="font-weight-semi-bold fs--1 text-nowrap" href="javascript:;">Update Header Sliders
+									<a class="font-weight-semi-bold fs--1 text-nowrap" href="javascript:;" onclick="updateslider()">Update Header Sliders
 									</a>
 								</div>
 							</div>

@@ -10,6 +10,7 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		$data['category_data'] = $this->Home_model->getcatdata();
+		$data['get_slider_data'] = $this->Home_model->getslider_data();
 		$this->load->view('welcome_message',$data);
 	}
 }

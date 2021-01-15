@@ -11,6 +11,7 @@ class Home_controller extends CI_Controller
         if(isset($_SESSION['csrf']))
         {
             $data['category_count'] = $this->Home_model->getcat_count();
+            $data['get_slider_data'] = $this->Home_model->getslider_data();
             $this->load->view('Home/Home_view',$data);
         }
         else
@@ -39,5 +40,22 @@ class Home_controller extends CI_Controller
         {
             header('HTTP/1.1 403 Forbidden');
         }
+    }
+    public function updateslider()
+    {
+        $headers = apache_request_headers();
+        if (isset($headers['csrftoken'])) {
+            if ($headers['csrftoken'] !== $_SESSION['csrf']) {
+                header('HTTP/1.1 403 Forbidden');
+            }
+            else
+            {
+                $this->Home_model->updateslider($_POST);
+            }
+        }
+        else
+        {
+            header('HTTP/1.1 403 Forbidden');
+        } 
     }
 }
