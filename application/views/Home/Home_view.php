@@ -56,10 +56,10 @@
                             <a class="nav-link" id="navbarDropdownHome" href="#" role="button">Home</a>
 						</li>
 						<li class="nav-item dropdown dropdown-on-hover">
-                            <a class="nav-link" aria-haspopup="true" aria-expanded="true">About Publication</a>
+                            <a class="nav-link" aria-haspopup="true" aria-expanded="true" href="#">About Publication</a>
 						</li>
-						<li class="nav-item dropdown dropdown-on-hover"><a class="nav-link"
-								id="navbarDropdownDocumentation" href="#">Shop</a>
+						<li class="nav-item dropdown dropdown-on-hover">
+							<a class="nav-link" id="navbarDropdownDocumentation" href="#">Shop</a>
 						</li>
 						<li class="nav-item dropdown dropdown-on-hover">
                             <a class="nav-link" id="navbarDropdownComponents" href="#">Contact</a>
