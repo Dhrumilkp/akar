@@ -37,18 +37,18 @@
                             <div class="main-navigation flex-lg-right">
                                 <ul class="main-menu menu-right ">
                                     <li class="menu-item has-children">
-                                        <a href="#">Home</a>
+                                        <a href="<?php echo base_url(); ?>">Home</a>
                                     </li>
                                     <!-- Shop -->
                                     <li class="menu-item has-children mega-menu">
-                                        <a href="#">About Publication</a>
+                                        <a href="<?php echo base_url(); ?>about">About Publication</a>
                                     </li>
                                     <!-- Pages -->
                                     <li class="menu-item has-children">
-                                        <a href="#">Shop</a>
+                                        <a href="<?php echo base_url(); ?>shop">Shop</a>
                                     </li>
                                     <li class="menu-item">
-                                        <a href="#">Contact</a>
+                                        <a href="<?php echo base_url(); ?>contact">Contact</a>
                                     </li>
                                 </ul>
                             </div>
@@ -145,18 +145,18 @@
                         <nav class="off-canvas-nav">
                             <ul class="mobile-menu main-mobile-menu">
                                 <li class="menu-item has-children">
-                                    <a href="#">Home</a>
+                                    <a href="<?php echo base_url(); ?>">Home</a>
                                 </li>
                                 <!-- Shop -->
                                 <li class="menu-item has-children mega-menu">
-                                    <a href="#">About Publication</a>
+                                    <a href="<?php echo base_url(); ?>about">About Publication</a>
                                 </li>
                                 <!-- Pages -->
                                 <li class="menu-item has-children">
-                                    <a href="#">Shop</a>
+                                    <a href="<?php echo base_url(); ?>shop">Shop</a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="#">Contact</a>
+                                    <a href="<?php echo base_url(); ?>contact">Contact</a>
                                 </li>
                             </ul>
                         </nav>

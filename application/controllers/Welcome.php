@@ -13,4 +13,16 @@ class Welcome extends CI_Controller {
 		$data['get_slider_data'] = $this->Home_model->getslider_data();
 		$this->load->view('welcome_message',$data);
 	}
+	public function about()
+    {
+        $this->load->view('About/About_view');
+	}
+	public function shop()
+    {
+        $this->load->view('Shope/Shope_view');
+	}
+	public function contact()
+	{
+		$this->load->view('Contact/Contact_view');
+	}
 }

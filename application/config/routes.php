@@ -59,3 +59,9 @@ $route['home'] = 'Home/Home_controller/home';
 $route['createcat'] = 'Home/Home_controller/createcat';
 $route['updateslider'] = 'Home/Home_controller/updateslider';
 $route['logout'] = 'Home/Home_controller/logout';
+// About
+$route['about'] = 'Welcome/about';
+// SHOPE
+$route['shop'] = 'Welcome/shop';
+// COntact
+$route['contact'] = 'Welcome/contact';
