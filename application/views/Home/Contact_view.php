@@ -30,7 +30,12 @@
 	<link href="assets/lib/leaflet/leaflet.css" rel="stylesheet">
 	<link href="assets/lib/leaflet.markercluster/MarkerCluster.css" rel="stylesheet">
 	<link href="assets/lib/leaflet.markercluster/MarkerCluster.Default.css" rel="stylesheet">
-	<link href="assets/css/theme-dark.min.css" rel="stylesheet">
+    <link href="assets/css/theme-dark.min.css" rel="stylesheet">
+    <style>
+        iframe{
+            width:100% !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -74,7 +79,7 @@
 							<div class="bg-holder bg-card" style="background-image: url('<?php echo base_url(); ?>assets/img/corner.png');"></div>
 							<div class="position-relative card-body">
 								<h6>Google Map URl</h6>
-								<div class="display-4 fs-4 mb-2 font-weight-normal text-sans-serif text-warning" id="contact_number_count"></div>
+								<div class="display-4 fs-4 mb-2 font-weight-normal text-sans-serif text-warning" id="contact_number_count"><?php echo $get_google_map['a_gurl']; ?></div>
 									<a class="font-weight-semi-bold fs--1 text-nowrap" href="javascript:;" onclick="googlemapurl()">Add Google Url
 									</a>
 								</div>
