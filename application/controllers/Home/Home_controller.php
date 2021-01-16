@@ -58,4 +58,15 @@ class Home_controller extends CI_Controller
             header('HTTP/1.1 403 Forbidden');
         } 
     }
+    public function admincontact()
+    {
+        if(isset($_SESSION['csrf']))
+        {
+            $this->load->view('Home/Contact_view');
+        }
+        else
+        {
+            redirect(base_url());
+        }
+    }
 }
