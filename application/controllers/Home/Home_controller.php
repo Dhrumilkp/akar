@@ -43,20 +43,7 @@ class Home_controller extends CI_Controller
     }
     public function updateslider()
     {
-        $headers = apache_request_headers();
-        if (isset($headers['csrftoken'])) {
-            if ($headers['csrftoken'] !== $_SESSION['csrf']) {
-                header('HTTP/1.1 403 Forbidden');
-            }
-            else
-            {
-                $this->Home_model->updateslider($_POST);
-            }
-        }
-        else
-        {
-            header('HTTP/1.1 403 Forbidden');
-        } 
+        $this->Home_model->updateslider($_POST);
     }
     public function admincontact()
     {
