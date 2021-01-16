@@ -62,7 +62,10 @@ class Home_controller extends CI_Controller
     {
         if(isset($_SESSION['csrf']))
         {
-            $this->load->view('Home/Contact_view');
+            $data['get_contact_data'] = $this->Home_model->getcontact_data();
+            $data['get_address_data'] = $this->Home_model->getaddress_data();
+            $data['get_google_map'] =  $this->Home_model->getgooglemarker();
+            $this->load->view('Home/Contact_view',$data);
         }
         else
         {
@@ -79,6 +82,40 @@ class Home_controller extends CI_Controller
             else
             {
                 $this->Home_model->updatecontact($_POST);
+            }
+        }
+        else
+        {
+            header('HTTP/1.1 403 Forbidden');
+        }
+    }
+    public function udpateaddress()
+    {
+        $headers = apache_request_headers();
+        if (isset($headers['csrftoken'])) {
+            if ($headers['csrftoken'] !== $_SESSION['csrf']) {
+                header('HTTP/1.1 403 Forbidden');
+            }
+            else
+            {
+                $this->Home_model->updateaddress($_POST);
+            }
+        }
+        else
+        {
+            header('HTTP/1.1 403 Forbidden');
+        }
+    }
+    public function updategurl()
+    {
+        $headers = apache_request_headers();
+        if (isset($headers['csrftoken'])) {
+            if ($headers['csrftoken'] !== $_SESSION['csrf']) {
+                header('HTTP/1.1 403 Forbidden');
+            }
+            else
+            {
+                $this->Home_model->updategoogleurl($_POST);
             }
         }
         else

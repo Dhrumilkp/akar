@@ -7,8 +7,7 @@
 						<img src="theme/image/logo.jpg" alt="">
 					</div>
 					<div class="footer-contact">
-						<p><span class="text text-center w-100">B-304, Akshat Avenue, Opp Revti tower, Ramdevnagar,
-								Satellite, Ahmedabad, Gujarat – 380015</span></p>
+						<p><span class="text text-center w-100"><?php echo $get_address_data['a_address']; ?></span></p>
 						<p><span class="text text-center w-100">+<span
 									class="contact_number"><?php echo $get_contact_data['contact_number'] ?></span></span>
 						</p>

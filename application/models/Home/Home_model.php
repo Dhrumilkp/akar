@@ -144,4 +144,100 @@ class Home_model extends CI_Model
             return false;
         }
     }
+    public function getaddress_data()
+    {
+        $query = $this->db->get('a_address');
+        if($query->num_rows() > 0)
+        {
+            $result = $query->row_array();
+            return $result;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public function getgooglemarker()
+    {
+        $query = $this->db->get('a_gurl');
+        if($query->num_rows() > 0)
+        {
+            $result = $query->row_array();
+            return $result;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public function updateaddress($postdata)
+    {
+        $query = $this->db->get('a_address');
+        if($query->num_rows() > 0)
+        {
+            // Update
+            $this->db->truncate('a_address');
+            $data = array(
+                'a_address' => $postdata['address']
+            );
+            $this->db->insert('a_address',$data);
+            if($this->db->affected_rows() > 0)
+            {
+                $res = array(
+                    'status' => 'success'
+                );
+                echo json_encode($res);
+            }
+        }
+        else
+        {
+            // Insert
+            $data = array(
+                'a_address' => $postdata['address']
+            );
+            $this->db->insert('a_address',$data);
+            if($this->db->affected_rows() > 0)
+            {
+                $res = array(
+                    'status' => 'success'
+                );
+                echo json_encode($res);
+            }
+        }
+    }
+    public function updategoogleurl($postdata)
+    {
+        $query = $this->db->get('a_gurl');
+        if($query->num_rows() > 0)
+        {
+            // Update
+            $this->db->truncate('a_gurl');
+            $data = array(
+                'a_gurl' => $postdata['g_url']
+            );
+            $this->db->insert('a_gurl',$data);
+            if($this->db->affected_rows() > 0)
+            {
+                $res = array(
+                    'status' => 'success'
+                );
+                echo json_encode($res);
+            }
+        }
+        else
+        {
+            // Insert
+            $data = array(
+                'a_gurl' => $postdata['g_url']
+            );
+            $this->db->insert('a_gurl',$data);
+            if($this->db->affected_rows() > 0)
+            {
+                $res = array(
+                    'status' => 'success'
+                );
+                echo json_encode($res);
+            }
+        }
+    }
 }

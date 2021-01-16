@@ -50,25 +50,51 @@
 							<div class="bg-holder bg-card" style="background-image: url('<?php echo base_url(); ?>assets/img/corner.png');"></div>
 							<div class="position-relative card-body">
 								<h6>CONTACT NUMBER</h6>
-								<div class="display-4 fs-4 mb-2 font-weight-normal text-sans-serif text-warning" id="contact_number_count">1</div>
+								<div class="display-4 fs-4 mb-2 font-weight-normal text-sans-serif text-warning" id="contact_number_count">+<?php echo $get_contact_data['contact_number']; ?></div>
 									<a class="font-weight-semi-bold fs--1 text-nowrap" href="javascript:;" onclick="addnewcontact()">Add New Contact Number
 									</a>
 								</div>
 							</div>
 						</div>
-					</div>
-					<footer>
-						<div class="row no-gutters justify-content-between fs--1 mt-4 mb-3">
-							<div class="col-12 col-sm-auto text-center">
-								<p class="mb-0 text-600">Dynamic Dashboards By Workoscope Inc, DE<span
-										class="d-none d-sm-inline-block">| </span><br class="d-sm-none" /> 2020 &copy; <a
-										href="https://themewagon.com">Workoscope Inc SME Initiative</a></p>
-							</div>
-							<div class="col-12 col-sm-auto text-center">
-								<p class="mb-0 text-600">v2.8.0</p>
+                    </div>
+                    <div class="col-md-12 col-lg-12">
+						<div class="mb-3 overflow-hidden card">
+							<div class="bg-holder bg-card" style="background-image: url('<?php echo base_url(); ?>assets/img/corner.png');"></div>
+							<div class="position-relative card-body">
+								<h6>ADDRESS INFORMATION</h6>
+								<div class="display-4 fs-4 mb-2 font-weight-normal text-sans-serif text-warning" id="contact_number_count"><?php echo $get_address_data['a_address']; ?></div>
+									<a class="font-weight-semi-bold fs--1 text-nowrap" href="javascript:;" onclick="addaddressinformation()">Add address
+									</a>
+								</div>
 							</div>
 						</div>
-					</footer>
+                    </div>
+                    <div class="col-md-12 col-lg-12">
+						<div class="mb-3 overflow-hidden card">
+							<div class="bg-holder bg-card" style="background-image: url('<?php echo base_url(); ?>assets/img/corner.png');"></div>
+							<div class="position-relative card-body">
+								<h6>Google Map URl</h6>
+								<div class="display-4 fs-4 mb-2 font-weight-normal text-sans-serif text-warning" id="contact_number_count"></div>
+									<a class="font-weight-semi-bold fs--1 text-nowrap" href="javascript:;" onclick="googlemapurl()">Add Google Url
+									</a>
+								</div>
+							</div>
+						</div>
+                    </div>
+                    <div class="container">
+                        <footer>
+                            <div class="row no-gutters justify-content-between fs--1 mt-4 mb-3">
+                                <div class="col-12 col-sm-auto text-center">
+                                    <p class="mb-0 text-600">Dynamic Dashboards By Workoscope Inc, DE<span
+                                            class="d-none d-sm-inline-block">| </span><br class="d-sm-none" /> 2020 &copy; <a
+                                            href="https://themewagon.com">Workoscope Inc SME Initiative</a></p>
+                                </div>
+                                <div class="col-12 col-sm-auto text-center">
+                                    <p class="mb-0 text-600">v2.8.0</p>
+                                </div>
+                            </div>
+                        </footer>
+                    </div>
 				</div>
 			</div>
 		</div>

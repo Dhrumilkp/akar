@@ -6,12 +6,11 @@ function addnewcontact()
     '<div class="modal-dialog">' +
     '<div class="modal-content">' +
     '<div class="modal-header">' +
-    '<h5 class="modal-title">Add Header Slider Modal</h5>' +
+    '<h5 class="modal-title">Add Contact Number Modal</h5>' +
     '<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>' +
     '</div>' +
     '<div class="modal-body">' +
     '<form id="add_new_contact_form" enctype="multipart/form-data">' +
-    '<label style="margin-top:5px;">Slider 1</label>' +
     '<input type="number" class="form-control" name="contact" id="contact" required>' +
     '<div class="mt-2">' +
     '<button type="submit" class="btn btn-outline-primary mr-1 mb-1" style="margin-top:2rem;" id="update_contact_number">Update</button>' +
@@ -51,6 +50,118 @@ $(document).on('submit','#add_new_contact_form',function(e){
             success: function (response) {
                 if (response.status == "success") {
 					alert("Contact Updated");
+					location.reload();
+				}
+            }
+        });
+    }
+});
+function addaddressinformation()
+{
+    var addnewcontactmodal = '<div class="modal" id="add_adress" tabindex="-1">' +
+    '<div class="modal-dialog">' +
+    '<div class="modal-content">' +
+    '<div class="modal-header">' +
+    '<h5 class="modal-title">Add Address Modal</h5>' +
+    '<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>' +
+    '</div>' +
+    '<div class="modal-body">' +
+    '<form id="add_adress_from" enctype="multipart/form-data">' +
+    '<input type="text" class="form-control" name="address" id="address" required>' +
+    '<div class="mt-2">' +
+    '<button type="submit" class="btn btn-outline-primary mr-1 mb-1" style="margin-top:2rem;" id="update_address">Update</button>' +
+    '</div>' +
+    '</form>' +
+    '</div>' +
+    '</div>' +
+    '</div>' +
+    '</div>';
+    $('#dynamic_data_model').html(addnewcontactmodal);
+    $('#add_adress').modal('show');
+    $('#add_adress_from').validate({
+		errorClass: "is-invalid",
+		validClass: "is-valid",
+		errorElement: "em"
+	});
+}
+$(document).on('submit','#add_adress_from',function(e){
+    e.preventDefault();
+    if($(this).valid())
+    {
+        var spinner = '<div class="spinner-border text-primary" role="status">' +
+		'</div>';
+        $('#update_address').html(spinner);
+        $('#update_address').prop('disabled',true);
+        var formData = new FormData($(this)[0]);
+        $.ajax({
+            type: "POST",
+            url: ""+url+"udpateaddress",
+            data: formData,
+            dataType: "json",
+            processData: false,
+            contentType: false,
+            headers: {
+				'csrftoken': $('meta[name="csrf-token"]').attr('content')
+			},
+            success: function (response) {
+                if (response.status == "success") {
+					alert("Address Updated");
+					location.reload();
+				}
+            }
+        });
+    }
+});
+function googlemapurl()
+{
+    var addnewcontactmodal = '<div class="modal" id="g_url_modal" tabindex="-1">' +
+    '<div class="modal-dialog">' +
+    '<div class="modal-content">' +
+    '<div class="modal-header">' +
+    '<h5 class="modal-title">Add Google URL Modal</h5>' +
+    '<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>' +
+    '</div>' +
+    '<div class="modal-body">' +
+    '<form id="g_url_form" enctype="multipart/form-data">' +
+    '<input type="text" class="form-control" name="g_url" id="g_url" required>' +
+    '<div class="mt-2">' +
+    '<button type="submit" class="btn btn-outline-primary mr-1 mb-1" style="margin-top:2rem;" id="update_g_url">Update</button>' +
+    '</div>' +
+    '</form>' +
+    '</div>' +
+    '</div>' +
+    '</div>' +
+    '</div>';
+    $('#dynamic_data_model').html(addnewcontactmodal);
+    $('#g_url_modal').modal('show');
+    $('#g_url_form').validate({
+		errorClass: "is-invalid",
+		validClass: "is-valid",
+		errorElement: "em"
+	});
+}
+$(document).on('submit','#g_url_form',function(e){
+    e.preventDefault();
+    if($(this).valid())
+    {
+        var spinner = '<div class="spinner-border text-primary" role="status">' +
+		'</div>';
+        $('#update_g_url').html(spinner);
+        $('#update_g_url').prop('disabled',true);
+        var formData = new FormData($(this)[0]);
+        $.ajax({
+            type: "POST",
+            url: ""+url+"updategurl",
+            data: formData,
+            dataType: "json",
+            processData: false,
+            contentType: false,
+            headers: {
+				'csrftoken': $('meta[name="csrf-token"]').attr('content')
+			},
+            success: function (response) {
+                if (response.status == "success") {
+					alert("Google Marker Updated");
 					location.reload();
 				}
             }
