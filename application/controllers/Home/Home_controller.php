@@ -74,53 +74,14 @@ class Home_controller extends CI_Controller
     }
     public function updatecontact()
     {
-        $headers = apache_request_headers();
-        if (isset($headers['csrftoken'])) {
-            if ($headers['csrftoken'] !== $_SESSION['csrf']) {
-                header('HTTP/1.1 403 Forbidden');
-            }
-            else
-            {
-                $this->Home_model->updatecontact($_POST);
-            }
-        }
-        else
-        {
-            header('HTTP/1.1 403 Forbidden');
-        }
+        $this->Home_model->updatecontact($_POST);
     }
     public function udpateaddress()
     {
-        $headers = apache_request_headers();
-        if (isset($headers['csrftoken'])) {
-            if ($headers['csrftoken'] !== $_SESSION['csrf']) {
-                header('HTTP/1.1 403 Forbidden');
-            }
-            else
-            {
-                $this->Home_model->updateaddress($_POST);
-            }
-        }
-        else
-        {
-            header('HTTP/1.1 403 Forbidden');
-        }
+        $this->Home_model->updateaddress($_POST);
     }
     public function updategurl()
     {
-        $headers = apache_request_headers();
-        if (isset($headers['csrftoken'])) {
-            if ($headers['csrftoken'] !== $_SESSION['csrf']) {
-                header('HTTP/1.1 403 Forbidden');
-            }
-            else
-            {
-                $this->Home_model->updategoogleurl($_POST);
-            }
-        }
-        else
-        {
-            header('HTTP/1.1 403 Forbidden');
-        }
+        $this->Home_model->updategoogleurl($_POST);
     }
 }
