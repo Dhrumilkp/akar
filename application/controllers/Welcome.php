@@ -13,6 +13,7 @@ class Welcome extends CI_Controller {
 		$data['get_slider_data'] = $this->Home_model->getslider_data();
 		$data['get_contact_data'] = $this->Home_model->getcontact_data();
 		$data['get_address_data'] = $this->Home_model->getaddress_data();
+		$data['get_email_data'] = $this->Home_model->getemail();
 		$this->load->view('welcome_message',$data);
 	}
 	public function about()
@@ -20,6 +21,7 @@ class Welcome extends CI_Controller {
 		$data['category_data'] = $this->Home_model->getcatdata();
 		$data['get_contact_data'] = $this->Home_model->getcontact_data();
 		$data['get_address_data'] = $this->Home_model->getaddress_data();
+		$data['get_email_data'] = $this->Home_model->getemail();
         $this->load->view('About/About_view',$data);
 	}
 	public function shop()
@@ -27,6 +29,7 @@ class Welcome extends CI_Controller {
 		$data['category_data'] = $this->Home_model->getcatdata();
 		$data['get_contact_data'] = $this->Home_model->getcontact_data();
 		$data['get_address_data'] = $this->Home_model->getaddress_data();
+		$data['get_email_data'] = $this->Home_model->getemail();
         $this->load->view('Shope/Shope_view',$data);
 	}
 	public function contact()
@@ -35,6 +38,7 @@ class Welcome extends CI_Controller {
 		$data['get_contact_data'] = $this->Home_model->getcontact_data();
 		$data['get_address_data'] = $this->Home_model->getaddress_data();
 		$data['get_google_map'] =  $this->Home_model->getgooglemarker();
+		$data['get_email_data'] = $this->Home_model->getemail();
 		$this->load->view('Contact/Contact_view',$data);
 	}
 }

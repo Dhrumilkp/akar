@@ -151,7 +151,7 @@
 			<div class="off-canvas-bottom">
 				<div class="contact-list mb--10">
 					<a href="#" class="sin-contact"><i class="fas fa-mobile-alt"></i><?php echo $get_contact_data['contact_number'];?></a>
-					<a href="#" class="sin-contact"><i class="fas fa-envelope"></i>examle@handart.com</a>
+					<a href="#" class="sin-contact"><i class="fas fa-envelope"></i><?php echo $get_email_data['a_email']; ?></a>
 				</div>
 				<div class="off-canvas-social">
 					<a href="#" class="single-icon"><i class="fab fa-facebook-f"></i></a>

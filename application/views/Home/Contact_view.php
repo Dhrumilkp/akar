@@ -84,8 +84,18 @@
 									</a>
 								</div>
 							</div>
-						</div>
-                    </div>
+                        </div>
+                        <div class="mb-3 overflow-hidden card">
+                            <div class="bg-holder bg-card" style="background-image: url('<?php echo base_url(); ?>assets/img/corner.png');"></div>
+                            <div class="position-relative card-body">
+                                <h6>Add Email Address</h6>
+                                <div class="display-4 fs-4 mb-2 font-weight-normal text-sans-serif text-warning" id="contact_number_count"><?php echo $get_email_data['a_email']; ?></div>
+                                    <a class="font-weight-semi-bold fs--1 text-nowrap" href="javascript:;" onclick="addemailaddress()">Add Email Address
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                        
                     <div class="container">
                         <footer>
                             <div class="row no-gutters justify-content-between fs--1 mt-4 mb-3">

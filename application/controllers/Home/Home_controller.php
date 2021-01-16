@@ -65,6 +65,7 @@ class Home_controller extends CI_Controller
             $data['get_contact_data'] = $this->Home_model->getcontact_data();
             $data['get_address_data'] = $this->Home_model->getaddress_data();
             $data['get_google_map'] =  $this->Home_model->getgooglemarker();
+            $data['get_email_data'] = $this->Home_model->getemail();
             $this->load->view('Home/Contact_view',$data);
         }
         else
@@ -83,5 +84,9 @@ class Home_controller extends CI_Controller
     public function updategurl()
     {
         $this->Home_model->updategoogleurl($_POST);
+    }
+    public function updateemail()
+    {
+        $this->Home_model->updatemail($_POST);
     }
 }

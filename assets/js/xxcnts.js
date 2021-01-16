@@ -168,3 +168,59 @@ $(document).on('submit','#g_url_form',function(e){
         });
     }
 });
+function addemailaddress()
+{
+    var addemailaddress = '<div class="modal" id="add_email_address" tabindex="-1">' +
+    '<div class="modal-dialog">' +
+    '<div class="modal-content">' +
+    '<div class="modal-header">' +
+    '<h5 class="modal-title">Add Email Address</h5>' +
+    '<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>' +
+    '</div>' +
+    '<div class="modal-body">' +
+    '<form id="add_email_address_from" enctype="multipart/form-data">' +
+    '<input type="email" class="form-control" name="email" id="email" required>' +
+    '<div class="mt-2">' +
+    '<button type="submit" class="btn btn-outline-primary mr-1 mb-1" style="margin-top:2rem;" id="update_email">Update</button>' +
+    '</div>' +
+    '</form>' +
+    '</div>' +
+    '</div>' +
+    '</div>' +
+    '</div>';
+    $('#dynamic_data_model').html(addemailaddress);
+    $('#add_email_address').modal('show');
+    $('#add_email_address_from').validate({
+		errorClass: "is-invalid",
+		validClass: "is-valid",
+		errorElement: "em"
+	});
+}
+$(document).on('submit','#add_email_address_from',function(e){
+    e.preventDefault();
+    if($(this).valid())
+    {
+        var spinner = '<div class="spinner-border text-primary" role="status">' +
+		'</div>';
+        $('#update_email').html(spinner);
+        $('#update_email').prop('disabled',true);
+        var formData = new FormData($(this)[0]);
+        $.ajax({
+            type: "POST",
+            url: ""+url+"updateemail",
+            data: formData,
+            dataType: "json",
+            processData: false,
+            contentType: false,
+            headers: {
+				'csrftoken': $('meta[name="csrf-token"]').attr('content')
+			},
+            success: function (response) {
+                if (response.status == "success") {
+					alert("Google Marker Updated");
+					location.reload();
+				}
+            }
+        });
+    }
+});

@@ -170,6 +170,19 @@ class Home_model extends CI_Model
             return false;
         }
     }
+    public function getemail()
+    {
+        $query = $this->db->get('a_email');
+        if($query->num_rows() > 0)
+        {
+            $result = $query->row_array();
+            return $result;
+        }
+        else
+        {
+            return false;
+        } 
+    }
     public function updateaddress($postdata)
     {
         $query = $this->db->get('a_address');
@@ -231,6 +244,41 @@ class Home_model extends CI_Model
                 'a_gurl' => $postdata['g_url']
             );
             $this->db->insert('a_gurl',$data);
+            if($this->db->affected_rows() > 0)
+            {
+                $res = array(
+                    'status' => 'success'
+                );
+                echo json_encode($res);
+            }
+        }
+    }
+    public function updatemail($postdata)
+    {
+        $query = $this->db->get('a_email');
+        if($query->num_rows() > 0)
+        {
+            // Update
+            $this->db->truncate('a_email');
+            $data = array(
+                'a_email' => $postdata['email']
+            );
+            $this->db->insert('a_email',$data);
+            if($this->db->affected_rows() > 0)
+            {
+                $res = array(
+                    'status' => 'success'
+                );
+                echo json_encode($res);
+            }
+        }
+        else
+        {
+            // Insert
+            $data = array(
+                'a_email' => $postdata['email']
+            );
+            $this->db->insert('a_email',$data);
             if($this->db->affected_rows() > 0)
             {
                 $res = array(

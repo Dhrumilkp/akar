@@ -11,7 +11,7 @@
 						<p><span class="text text-center w-100">+<span
 									class="contact_number"><?php echo $get_contact_data['contact_number'] ?></span></span>
 						</p>
-						<p><span class="text text-center w-100">suport@hastech.com</span></p>
+						<p><span class="text text-center w-100"><?php echo $get_email_data['a_email']; ?></span></p>
 					</div>
 				</div>
 			</div>
