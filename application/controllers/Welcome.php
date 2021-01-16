@@ -11,18 +11,25 @@ class Welcome extends CI_Controller {
 	{
 		$data['category_data'] = $this->Home_model->getcatdata();
 		$data['get_slider_data'] = $this->Home_model->getslider_data();
+		$data['get_contact_data'] = $this->Home_model->getcontact_data();
 		$this->load->view('welcome_message',$data);
 	}
 	public function about()
     {
-        $this->load->view('About/About_view');
+		$data['category_data'] = $this->Home_model->getcatdata();
+		$data['get_contact_data'] = $this->Home_model->getcontact_data();
+        $this->load->view('About/About_view',$data);
 	}
 	public function shop()
     {
-        $this->load->view('Shope/Shope_view');
+		$data['category_data'] = $this->Home_model->getcatdata();
+		$data['get_contact_data'] = $this->Home_model->getcontact_data();
+        $this->load->view('Shope/Shope_view',$data);
 	}
 	public function contact()
 	{
-		$this->load->view('Contact/Contact_view');
+		$data['category_data'] = $this->Home_model->getcatdata();
+		$data['get_contact_data'] = $this->Home_model->getcontact_data();
+		$this->load->view('Contact/Contact_view',$data);
 	}
 }

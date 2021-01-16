@@ -96,4 +96,52 @@ class Home_model extends CI_Model
             return false;
         }
     }
+    public function updatecontact($postdata)
+    {
+        $query = $this->db->get('a_contact');
+        if($query->num_rows() > 0)
+        {
+            // Update
+            $this->db->truncate('a_contact');
+            $data = array(
+                'contact_number' => $postdata['contact']
+            );
+            $this->db->insert('a_contact',$data);
+            if($this->db->affected_rows() > 0)
+            {
+                $res = array(
+                    'status' => 'success'
+                );
+                echo json_encode($res);
+            }
+        }
+        else
+        {
+            // Insert
+            $data = array(
+                'contact_number' => $postdata['contact']
+            );
+            $this->db->insert('a_contact',$data);
+            if($this->db->affected_rows() > 0)
+            {
+                $res = array(
+                    'status' => 'success'
+                );
+                echo json_encode($res);
+            }
+        }
+    }
+    public function getcontact_data()
+    {
+        $query = $this->db->get('a_contact');
+        if($query->num_rows() > 0)
+        {
+            $result = $query->row_array();
+            return $result;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

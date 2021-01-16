@@ -65,4 +65,5 @@ $route['about'] = 'Welcome/about';
 $route['shop'] = 'Welcome/shop';
 // COntact
 $route['contact'] = 'Welcome/contact';
+$route['updatecontact'] = 'Home/Home_controller/updatecontact';
 $route['admincontact'] = 'Home/Home_controller/admincontact';

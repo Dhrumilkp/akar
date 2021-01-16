@@ -69,4 +69,21 @@ class Home_controller extends CI_Controller
             redirect(base_url());
         }
     }
+    public function updatecontact()
+    {
+        $headers = apache_request_headers();
+        if (isset($headers['csrftoken'])) {
+            if ($headers['csrftoken'] !== $_SESSION['csrf']) {
+                header('HTTP/1.1 403 Forbidden');
+            }
+            else
+            {
+                $this->Home_model->updatecontact($_POST);
+            }
+        }
+        else
+        {
+            header('HTTP/1.1 403 Forbidden');
+        }
+    }
 }
