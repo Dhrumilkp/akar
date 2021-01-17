@@ -76,7 +76,7 @@
 										}
 									?>
 									</div>
-									<a class="font-weight-semi-bold fs--1 text-nowrap" href="javascript:;" onclick="updateslider()">Update Header Sliders
+									<a class="font-weight-semi-bold fs--1 text-nowrap" href="javascript:;" onclick="updateslider()">Add Header Sliders
 									</a>
 								</div>
 							</div>

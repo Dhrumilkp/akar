@@ -54,29 +54,12 @@ class Home_model extends CI_Model
                 array_push($error,"$file_name, ");
             }
         }
-        $query = $this->db->get('a_slider');
-        if($query->num_rows() > 0)
+        foreach($filepath as $row)
         {
-            $this->db->truncate('a_slider');
-            // Insert
-            foreach($filepath as $row)
-            {
-                $data = array(
-                    'sliders_path' => $row
-                );
-                $this->db->insert('a_slider',$data);
-            } 
-        }
-        else
-        {
-            // Insert
-            foreach($filepath as $row)
-            {
-                $data = array(
-                    'sliders_path' => $row
-                );
-                $this->db->insert('a_slider',$data);
-            }
+            $data = array(
+                'sliders_path' => $row
+            );
+            $this->db->insert('a_slider',$data);
         }
         $res = array(
             'status' => 'success'
