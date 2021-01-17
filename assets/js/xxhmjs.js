@@ -163,3 +163,31 @@ $(document).on('submit', '#update_header_slider', function (e) {
 		});
 	}
 })
+$('#subtitle_form').submit(function(e){
+	e.preventDefault();
+	if($(this).valid())
+	{
+		var spinner = '<div class="spinner-border text-primary" role="status">' +
+			'</div>';
+		$('#update_about_us').html(spinner);
+        $('#update_about_us').prop('disabled', true);
+		var formData = new FormData($(this)[0]);
+		$.ajax({
+			type: "POST",
+			url: "" + url + "aboutus",
+			data: formData,
+			processData: false,
+            contentType: false,
+            dataType : "json",
+			headers: {
+				'csrftoken': $('meta[name="csrf-token"]').attr('content')
+			},
+			success: function (response) {
+				if (response.status == "success") {
+					alert("About us updated");
+					location.reload();
+				}
+			}
+		});
+	}
+});

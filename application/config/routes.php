@@ -63,6 +63,7 @@ $route['logout'] = 'Home/Home_controller/logout';
 $route['about'] = 'Welcome/about';
 $route['aabout'] = 'Home/Home_controller/aabout';
 $route['updateaboutheaderslide'] = 'Home/Home_controller/updateaboutheaderslide';
+$route['aboutus'] = 'Home/Home_controller/aboutus';
 // SHOPE
 $route['shop'] = 'Welcome/shop';
 // COntact

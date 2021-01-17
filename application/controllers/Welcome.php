@@ -22,6 +22,8 @@ class Welcome extends CI_Controller {
 		$data['get_contact_data'] = $this->Home_model->getcontact_data();
 		$data['get_address_data'] = $this->Home_model->getaddress_data();
 		$data['get_email_data'] = $this->Home_model->getemail();
+		$data['get_about_header_slider'] = $this->Home_model->getaboutslider();
+		$data['get_about_text_data'] = $this->Home_model->getabouttextdata();
         $this->load->view('About/About_view',$data);
 	}
 	public function shop()

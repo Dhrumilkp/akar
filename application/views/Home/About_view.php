@@ -75,6 +75,29 @@
 							</div>
 						</div>
                     </div>
+                    <div class="col-md-12 col-lg-12">
+                        <div class="mb-3 overflow-hidden card">
+							<div class="bg-holder bg-card" style="background-image: url('<?php echo base_url(); ?>assets/img/corner.png');"></div>
+							<div class="position-relative card-body">
+								<h6>Subtitle & Description</h6>
+                                <form id="subtitle_form">
+                                    <div class="" style="margin-top:2rem;margin-bottom:2rem;">
+                                        <label>Subtitle</label>
+                                        <input type="text" name="sub_about" class="form-control" placeholder="Your subtitle" value="<?php echo $get_about_text_data['subtitle']; ?>" required/>
+                                    </div>
+                                    <div class="" style="margin-top:2rem;margin-bottom:2rem;">
+                                        <label>About Publication</label>
+                                        <textarea class="form-control" name="about_pub" id="" cols="30" rows="10"><?php echo $get_about_text_data['description']; ?></textarea>
+                                    </div>
+                                    <div class="" style="margin-top:2rem;margin-bottom:2rem;">
+                                        <button type="submit" class="btn btn-primary btn-block" id="update_about_us">
+                                            Update
+                                        </button>
+                                    </div>
+                                </form>
+							</div>
+						</div>
+                    </div>
                     <div class="container">
                         <footer>
                             <div class="row no-gutters justify-content-between fs--1 mt-4 mb-3">

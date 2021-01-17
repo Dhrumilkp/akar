@@ -266,4 +266,54 @@ class Home_model extends CI_Model
             echo json_encode($res);
         }
     }
+    public function aboutusdata($postdata)
+    {
+        $query = $this->db->get('a_about');
+        if($query->num_rows() > 0)
+        {
+            // Update
+            $this->db->truncate('a_about');
+            $data = array(
+                'subtitle' => $postdata['sub_about'],
+                'description' => $postdata['about_pub']
+            );
+            $this->db->insert('a_about',$data);
+            if($this->db->affected_rows() > 0)
+            {
+                $res = array(
+                    'status' => 'success'
+                );
+                echo json_encode($res);
+            }
+        }
+        else
+        {
+            // Insert
+            $data = array(
+                'subtitle' => $postdata['sub_about'],
+                'description' => $postdata['about_pub']
+            );
+            $this->db->insert('a_about',$data);
+            if($this->db->affected_rows() > 0)
+            {
+                $res = array(
+                    'status' => 'success'
+                );
+                echo json_encode($res);
+            }
+        }
+    }
+    public function getabouttextdata()
+    {
+        $query = $this->db->get('a_about');
+        if($query->num_rows() > 0)
+        {
+            $result = $query->row_array();
+            return $result;
+        }
+        else
+        {
+            return false;
+        } 
+    }
 }
