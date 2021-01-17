@@ -52,7 +52,62 @@ $(document).on('submit', '#add-book-cat', function (e) {
 		});
 	}
 });
-
+function addnewsliderimageabout()
+{
+	var addnewsliderimageabout = '<div class="modal" id="update_slider_modal" tabindex="-1">' +
+		'<div class="modal-dialog">' +
+		'<div class="modal-content">' +
+		'<div class="modal-header">' +
+		'<h5 class="modal-title">Add About Header Slider</h5>' +
+		'<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>' +
+		'</div>' +
+		'<div class="modal-body">' +
+		'<form id="update_about_header_slider_form" enctype="multipart/form-data">' +
+		'<label style="margin-top:5px;">About Slides</label>' +
+		'<input type="file" class="form-control" name="files[]" id="slider_1" required multiple>' +
+		'<div class="mt-2">' +
+		'<button type="submit" class="btn btn-outline-primary mr-1 mb-1" style="margin-top:2rem;" id="update_slider_btn">Update</button>' +
+		'</div>' +
+		'</form>' +
+		'</div>' +
+		'</div>' +
+		'</div>' +
+		'</div>';
+	$('#dynamic_data_model').html(addnewsliderimageabout);
+	$('#update_slider_modal').modal('show');	
+	$('#update_about_header_slider_form').validate({
+		errorClass: "is-invalid",
+		validClass: "is-valid",
+		errorElement: "em"
+	});
+}
+$(document).on('submit','#update_about_header_slider_form',function(e){
+	e.preventDefault();
+	if ($(this).valid()) {
+        var spinner = '<div class="spinner-border text-primary" role="status">' +
+			'</div>';
+		$('#update_slider_btn').html(spinner);
+        $('#update_slider_btn').prop('disabled', true);
+        var formData = new FormData($(this)[0]);
+        $.ajax({
+			type: "POST",
+			url: "" + url + "updateaboutheaderslide",
+			data: formData,
+			processData: false,
+            contentType: false,
+            dataType : "json",
+			headers: {
+				'csrftoken': $('meta[name="csrf-token"]').attr('content')
+			},
+			success: function (response) {
+				if (response.status == "success") {
+					alert("Slider Updated");
+					location.reload();
+				}
+			}
+		});
+	}
+});
 function updateslider() {
 	var updateslidermodal = '<div class="modal" id="update_slider_modal" tabindex="-1">' +
 		'<div class="modal-dialog">' +
@@ -63,7 +118,7 @@ function updateslider() {
 		'</div>' +
 		'<div class="modal-body">' +
 		'<form id="update_header_slider" enctype="multipart/form-data">' +
-		'<label style="margin-top:5px;">Slider 1</label>' +
+		'<label style="margin-top:5px;">Home Slider</label>' +
 		'<input type="file" class="form-control" name="files[]" id="slider_1" required multiple>' +
 		'<div class="mt-2">' +
 		'<button type="submit" class="btn btn-outline-primary mr-1 mb-1" style="margin-top:2rem;" id="update_slider_btn">Update</button>' +
@@ -75,6 +130,11 @@ function updateslider() {
 		'</div>';
 	$('#dynamic_data_model').html(updateslidermodal);
 	$('#update_slider_modal').modal('show');
+	$('#update_header_slider').validate({
+		errorClass: "is-invalid",
+		validClass: "is-valid",
+		errorElement: "em"
+	});
 }
 $(document).on('submit', '#update_header_slider', function (e) {
 	e.preventDefault();

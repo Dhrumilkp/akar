@@ -13,7 +13,7 @@
 				<a class="nav-link" id="navbarDropdownHome" href="<?php echo base_url(); ?>home" role="button">Home</a>
 			</li>
 			<li class="nav-item dropdown dropdown-on-hover">
-				<a class="nav-link" aria-haspopup="true" aria-expanded="true" href="#">About Publication</a>
+				<a class="nav-link" aria-haspopup="true" aria-expanded="true" href="<?php echo base_url(); ?>aabout">About Publication</a>
 			</li>
 			<li class="nav-item dropdown dropdown-on-hover">
 				<a class="nav-link" id="navbarDropdownDocumentation" href="#">Shop</a>
