@@ -55,7 +55,19 @@
 							<div class="bg-holder bg-card" style="background-image: url('<?php echo base_url(); ?>assets/img/corner.png');"></div>
 							<div class="position-relative card-body">
 								<h6>CONTACT NUMBER</h6>
-								<div class="display-4 fs-4 mb-2 font-weight-normal text-sans-serif text-warning" id="contact_number_count">+<?php echo $get_contact_data['contact_number']; ?></div>
+								<?php 
+									if(!empty($get_contact_data))
+									{
+										foreach($get_contact_data as $row)
+										{
+											?>
+												<div class="display-4 fs-4 mb-2 font-weight-normal text-sans-serif text-warning" id="contact_number_count">+<?php echo $row['contact_number']; ?></div>
+												</div>
+											<?
+										}
+									}
+								?>
+								<div class="container" style="padding-bottom:20px;">
 									<a class="font-weight-semi-bold fs--1 text-nowrap" href="javascript:;" onclick="addnewcontact()">Add New Contact Number
 									</a>
 								</div>
@@ -67,7 +79,19 @@
 							<div class="bg-holder bg-card" style="background-image: url('<?php echo base_url(); ?>assets/img/corner.png');"></div>
 							<div class="position-relative card-body">
 								<h6>ADDRESS INFORMATION</h6>
-								<div class="display-4 fs-4 mb-2 font-weight-normal text-sans-serif text-warning" id="contact_number_count"><?php echo $get_address_data['a_address']; ?></div>
+								<?php 
+									if(!empty($get_address_data))
+									{
+										foreach($get_address_data as $row)
+										{
+											?>
+												<div class="display-4 fs-4 mb-2 font-weight-normal text-sans-serif text-warning" id="contact_number_count"><?php echo $row['a_address']; ?></div>
+												</div>
+											<?
+										}
+									}
+								?>
+								<div class="container" style="padding-bottom:20px;">
 									<a class="font-weight-semi-bold fs--1 text-nowrap" href="javascript:;" onclick="addaddressinformation()">Add address
 									</a>
 								</div>
@@ -89,10 +113,22 @@
                             <div class="bg-holder bg-card" style="background-image: url('<?php echo base_url(); ?>assets/img/corner.png');"></div>
                             <div class="position-relative card-body">
                                 <h6>Add Email Address</h6>
-                                <div class="display-4 fs-4 mb-2 font-weight-normal text-sans-serif text-warning" id="contact_number_count"><?php echo $get_email_data['a_email']; ?></div>
-                                    <a class="font-weight-semi-bold fs--1 text-nowrap" href="javascript:;" onclick="addemailaddress()">Add Email Address
+								<?php 
+									if(!empty($get_email_data))
+									{
+										foreach($get_email_data as $row)
+										{
+											?>
+												<div class="display-4 fs-4 mb-2 font-weight-normal text-sans-serif text-warning" id="contact_number_count"><?php echo $row['a_email']; ?></div>
+												</div>
+											<?
+										}
+									}
+								?>
+								<div class="container" style="padding-bottom:20px;">
+									<a class="font-weight-semi-bold fs--1 text-nowrap" href="javascript:;" onclick="addemailaddress()">Add Email Address
                                     </a>
-                                </div>
+								</div>
                             </div>
                         </div>
                     </div>                        

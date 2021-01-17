@@ -98,37 +98,16 @@ class Home_model extends CI_Model
     }
     public function updatecontact($postdata)
     {
-        $query = $this->db->get('a_contact');
-        if($query->num_rows() > 0)
+        $data = array(
+            'contact_number' => $postdata['contact']
+        );
+        $this->db->insert('a_contact',$data);
+        if($this->db->affected_rows() > 0)
         {
-            // Update
-            $this->db->truncate('a_contact');
-            $data = array(
-                'contact_number' => $postdata['contact']
+            $res = array(
+                'status' => 'success'
             );
-            $this->db->insert('a_contact',$data);
-            if($this->db->affected_rows() > 0)
-            {
-                $res = array(
-                    'status' => 'success'
-                );
-                echo json_encode($res);
-            }
-        }
-        else
-        {
-            // Insert
-            $data = array(
-                'contact_number' => $postdata['contact']
-            );
-            $this->db->insert('a_contact',$data);
-            if($this->db->affected_rows() > 0)
-            {
-                $res = array(
-                    'status' => 'success'
-                );
-                echo json_encode($res);
-            }
+            echo json_encode($res);
         }
     }
     public function getcontact_data()
@@ -136,7 +115,7 @@ class Home_model extends CI_Model
         $query = $this->db->get('a_contact');
         if($query->num_rows() > 0)
         {
-            $result = $query->row_array();
+            $result = $query->result_array();
             return $result;
         }
         else
@@ -149,7 +128,7 @@ class Home_model extends CI_Model
         $query = $this->db->get('a_address');
         if($query->num_rows() > 0)
         {
-            $result = $query->row_array();
+            $result = $query->result_array();
             return $result;
         }
         else
@@ -175,7 +154,7 @@ class Home_model extends CI_Model
         $query = $this->db->get('a_email');
         if($query->num_rows() > 0)
         {
-            $result = $query->row_array();
+            $result = $query->result_array();
             return $result;
         }
         else
@@ -185,37 +164,16 @@ class Home_model extends CI_Model
     }
     public function updateaddress($postdata)
     {
-        $query = $this->db->get('a_address');
-        if($query->num_rows() > 0)
+        $data = array(
+            'a_address' => $postdata['address']
+        );
+        $this->db->insert('a_address',$data);
+        if($this->db->affected_rows() > 0)
         {
-            // Update
-            $this->db->truncate('a_address');
-            $data = array(
-                'a_address' => $postdata['address']
+            $res = array(
+                'status' => 'success'
             );
-            $this->db->insert('a_address',$data);
-            if($this->db->affected_rows() > 0)
-            {
-                $res = array(
-                    'status' => 'success'
-                );
-                echo json_encode($res);
-            }
-        }
-        else
-        {
-            // Insert
-            $data = array(
-                'a_address' => $postdata['address']
-            );
-            $this->db->insert('a_address',$data);
-            if($this->db->affected_rows() > 0)
-            {
-                $res = array(
-                    'status' => 'success'
-                );
-                echo json_encode($res);
-            }
+            echo json_encode($res);
         }
     }
     public function updategoogleurl($postdata)
@@ -255,37 +213,16 @@ class Home_model extends CI_Model
     }
     public function updatemail($postdata)
     {
-        $query = $this->db->get('a_email');
-        if($query->num_rows() > 0)
+        $data = array(
+            'a_email' => $postdata['email']
+        );
+        $this->db->insert('a_email',$data);
+        if($this->db->affected_rows() > 0)
         {
-            // Update
-            $this->db->truncate('a_email');
-            $data = array(
-                'a_email' => $postdata['email']
+            $res = array(
+                'status' => 'success'
             );
-            $this->db->insert('a_email',$data);
-            if($this->db->affected_rows() > 0)
-            {
-                $res = array(
-                    'status' => 'success'
-                );
-                echo json_encode($res);
-            }
-        }
-        else
-        {
-            // Insert
-            $data = array(
-                'a_email' => $postdata['email']
-            );
-            $this->db->insert('a_email',$data);
-            if($this->db->affected_rows() > 0)
-            {
-                $res = array(
-                    'status' => 'success'
-                );
-                echo json_encode($res);
-            }
+            echo json_encode($res);
         }
     }
 }

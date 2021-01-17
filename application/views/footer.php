@@ -7,11 +7,38 @@
 						<img src="theme/image/logo.jpg" alt="">
 					</div>
 					<div class="footer-contact">
-						<p><span class="text text-center w-100"><?php echo $get_address_data['a_address']; ?></span></p>
-						<p><span class="text text-center w-100">+<span
-									class="contact_number"><?php echo $get_contact_data['contact_number'] ?></span></span>
+						<p>
+							<span class="text text-center w-100">
+								<?php 
+									foreach($get_address_data as $row)
+									{
+										echo $row['a_address'];
+									}
+								?>
+							</span>
 						</p>
-						<p><span class="text text-center w-100"><?php echo $get_email_data['a_email']; ?></span></p>
+						<?php 
+							foreach($get_contact_data as $row)
+							{
+								?>
+									<p><span class="text text-center w-100">+<?php echo $row['contact_number']; ?></span>
+									</p>
+								<?
+							}
+						?>
+						<p>
+							<span class="text text-center w-100">
+								<?php 
+									foreach($get_email_data as $row)
+									{
+										?>
+											<p><span class="text text-center w-100"><?php echo $row['a_email']; ?></span>
+											</p>
+										<?
+									}
+								?>
+							</span>
+						</p>
 					</div>
 				</div>
 			</div>
