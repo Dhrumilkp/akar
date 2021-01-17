@@ -217,7 +217,7 @@ $(document).on('submit','#add_email_address_from',function(e){
 			},
             success: function (response) {
                 if (response.status == "success") {
-					alert("Google Marker Updated");
+					alert("Email Address updated");
 					location.reload();
 				}
             }
