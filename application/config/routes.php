@@ -66,6 +66,8 @@ $route['updateaboutheaderslide'] = 'Home/Home_controller/updateaboutheaderslide'
 $route['aboutus'] = 'Home/Home_controller/aboutus';
 // SHOPE
 $route['shop'] = 'Welcome/shop';
+$route['ashop'] = 'Home/Home_controller/ashop';
+$route['uploadbook'] = 'Home/Home_controller/uploadbook';
 // COntact
 $route['contact'] = 'Welcome/contact';
 $route['updatecontact'] = 'Home/Home_controller/updatecontact';

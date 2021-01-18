@@ -89,4 +89,20 @@ class Home_controller extends CI_Controller
     {
         $this->Home_model->aboutusdata($_POST);
     }
+    public function ashop()
+    {
+        if(isset($_SESSION['csrf']))
+        {
+            $data['book_cat'] = $this->Home_model->getbookcat();
+            $this->load->view('Home/Shop_view',$data);
+        }
+        else
+        {
+            redirect(base_url());
+        }
+    }
+    public function uploadbook()
+    {
+        $this->Home_model->uploadbook($_POST);
+    }
 }

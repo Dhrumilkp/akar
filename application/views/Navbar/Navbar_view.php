@@ -16,7 +16,7 @@
 				<a class="nav-link" aria-haspopup="true" aria-expanded="true" href="<?php echo base_url(); ?>aabout">About Publication</a>
 			</li>
 			<li class="nav-item dropdown dropdown-on-hover">
-				<a class="nav-link" id="navbarDropdownDocumentation" href="#">Shop</a>
+				<a class="nav-link" id="navbarDropdownDocumentation" href="<?php echo base_url(); ?>ashop">Shop</a>
 			</li>
 			<li class="nav-item dropdown dropdown-on-hover">
 				<a class="nav-link" id="navbarDropdownComponents" href="<?php echo base_url(); ?>admincontact">Contact</a>

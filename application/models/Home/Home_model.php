@@ -316,4 +316,59 @@ class Home_model extends CI_Model
             return false;
         } 
     }
+    public function getbookcat()
+    {
+        $query = $this->db->get('a_cat');
+        if($query->num_rows() > 0)
+        {
+            $result = $query->result_array();
+            return $result;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public function uploadbook($postdata)
+    {
+        // Upload img first
+        $extension=array("jpeg","jpg","png","gif");
+        $filepath = [];
+        foreach($_FILES["files"]["tmp_name"] as $key=>$tmp_name) {
+            $file_name=$_FILES["files"]["name"][$key];
+            $file_tmp=$_FILES["files"]["tmp_name"][$key];
+            $ext=pathinfo($file_name,PATHINFO_EXTENSION);
+        
+            $filename=basename($file_name,$ext);
+            $newFileName=$filename.time().".".$ext;
+            $final_name = str_replace(' ', '', $newFileName);
+            move_uploaded_file($file_tmp=$_FILES["files"]["tmp_name"][$key],"uploads/Books/".$final_name);
+            array_push($filepath,$final_name);
+        }
+        $data = array(
+            'book_title'    => $postdata['book_title'],
+            'book_cat'      => $postdata['book_cat'],
+            'book_desc'     => $postdata['book_desc'],
+            'book_cost'     => $postdata['book_cost'],
+            'book_amz_url'  => $postdata['book_amz_url'],
+            'created_at'    => time()
+        );
+        $this->db->insert('a_book_data',$data);
+        if($this->db->affected_rows() > 0)
+        {
+            $book_id = $this->db->insert_id();
+            foreach($filepath as $row)
+            {
+                $data = array(
+                    'book_id' => $book_id,
+                    'book_img_path' => $row
+                );
+                $this->db->insert('a_book_img',$data);
+            }
+            $res = array(
+                'status'    => 'success'
+            );
+            echo json_encode($res);
+        }
+    }
 }
