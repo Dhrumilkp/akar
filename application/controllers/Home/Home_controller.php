@@ -94,6 +94,8 @@ class Home_controller extends CI_Controller
         if(isset($_SESSION['csrf']))
         {
             $data['book_cat'] = $this->Home_model->getbookcat();
+            $data['book_count'] = $this->Home_model->getbookcount(); 
+            $data['book_data'] = $this->Home_model->getbookdata();
             $this->load->view('Home/Shop_view',$data);
         }
         else

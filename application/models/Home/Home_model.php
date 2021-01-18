@@ -351,24 +351,36 @@ class Home_model extends CI_Model
             'book_desc'     => $postdata['book_desc'],
             'book_cost'     => $postdata['book_cost'],
             'book_amz_url'  => $postdata['book_amz_url'],
-            'created_at'    => time()
+            'created_at'    => time(),
+            'book_img_path'     => implode(',',$filepath)
         );
         $this->db->insert('a_book_data',$data);
         if($this->db->affected_rows() > 0)
         {
-            $book_id = $this->db->insert_id();
-            foreach($filepath as $row)
-            {
-                $data = array(
-                    'book_id' => $book_id,
-                    'book_img_path' => $row
-                );
-                $this->db->insert('a_book_img',$data);
-            }
             $res = array(
                 'status'    => 'success'
             );
             echo json_encode($res);
+        }
+    }
+    public function getbookcount()
+    {
+        $query = $this->db->get('a_book_data');
+        $count = $query->num_rows();
+        return $count;
+    }
+    public function getbookdata()
+    {
+        $sql = "SELECT * FROM a_book_data JOIN a_cat ON a_book_data.book_cat = a_cat.id";
+        $query = $this->db->query($sql);
+        if($query->num_rows() > 0)
+        {
+            $result = $query->result_array();
+            return $result;
+        }
+        else
+        {
+            return false;
         }
     }
 }

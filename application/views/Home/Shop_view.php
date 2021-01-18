@@ -56,7 +56,7 @@
                                 <h6>Add Book To Shop</h6>
                             </div>
                             <div class="card-body">
-                                <h5 class="display-4 fs-4 mb-2 font-weight-normal text-sans-serif text-warning">50</h5>
+                                <h5 class="display-4 fs-4 mb-2 font-weight-normal text-sans-serif text-warning"><?php echo $book_count; ?></h5>
                                 <a href="javascript:;" onclick="addbooks()" class="text-primary">Add Books</a>
                             </div>
                         </div>
@@ -64,10 +64,11 @@
                     <div class="col-md-12 col-lg-12" style="margin-top:20px;">
                         <div class="card">
                             <div class="card-header">
-                                <h6>Books (50)</h6>
+                                <h6>Books (<?php echo $book_count; ?>)</h6>
                             </div>
                             <div class="card-body">
                                 <div class="row">
+                                    <?php print_r($book_data); ?>
                                     <div class="col-md-12 col-lg-3">
                                         <div class="card book-wrapper-card">
                                             <div class="card-img-top"><img class="img-fluid" src="uploads/C/030.jpg" alt="Card image cap"></div>
