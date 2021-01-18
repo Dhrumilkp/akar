@@ -34,3 +34,7 @@ $(document).on('submit', '#add-book-form', function (e) {
 		});
 	}
 });
+function editbook(bookid)
+{
+    alert(bookid);
+}

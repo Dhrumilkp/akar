@@ -68,25 +68,27 @@
                             </div>
                             <div class="card-body">
                                 <div class="row">
-                                    <?php print_r($book_data); ?>
-                                    <div class="col-md-12 col-lg-3">
-                                        <div class="card book-wrapper-card">
-                                            <div class="card-img-top"><img class="img-fluid" src="uploads/C/030.jpg" alt="Card image cap"></div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Card title</h5>
-                                                <h6>Category    :   Industry</h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-lg-3">
-                                        <div class="card book-wrapper-card">
-                                            <div class="card-img-top"><img class="img-fluid" src="uploads/C/030.jpg" alt="Card image cap"></div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Card title</h5>
-                                                <h6>Category    :   Industry</h6>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <?php 
+                                        if(!empty($book_data))
+                                        {
+                                            foreach($book_data as $row)
+                                            {
+                                                $book_img = explode(',',$row['book_img_path'])
+                                                ?>
+                                                    <div class="col-md-12 col-lg-3">
+                                                        <div class="card book-wrapper-card">
+                                                            <div class="card-img-top"><img class="img-fluid" src="uploads/Books/<?php echo $book_img[0]; ?>" alt="Card image cap"></div>
+                                                            <div class="card-body">
+                                                                <h5 class="card-title"><?php echo $row['book_title'] ?></h5>
+                                                                <h6>Category    :   <?php echo $row['cat_name'] ?></h6>
+                                                                <button value="<?php echo $row['book_id']; ?>" class="btn btn-primary btn-md" onclick="editbook(<?php echo $row['book_id']; ?>)">Edit Book</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                <?
+                                            }
+                                        }
+                                    ?>
                                 </div>
                             </div>
                         </div>
