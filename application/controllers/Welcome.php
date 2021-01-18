@@ -14,6 +14,7 @@ class Welcome extends CI_Controller {
 		$data['get_contact_data'] = $this->Home_model->getcontact_data();
 		$data['get_address_data'] = $this->Home_model->getaddress_data();
 		$data['get_email_data'] = $this->Home_model->getemail();
+		$data['book_data'] = $this->Home_model->getbookdatahome();
 		$this->load->view('welcome_message',$data);
 	}
 	public function about()

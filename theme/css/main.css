@@ -23391,13 +23391,7 @@ input[type="number"] {
 }
 
 .slider-border-multiple-row .single-slide .product-card--body::before {
-	position: absolute;
-	content: "";
-	background: #e5e5e5;
-	left: 0px;
-	top: 0;
-	height: 100%;
-	width: 1px;
+	
 }
 
 .slider-border-multiple-row .slick-current.slick-slide>div .product-card--body::before {
