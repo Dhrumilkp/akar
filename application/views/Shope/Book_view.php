@@ -14,7 +14,7 @@
 	<meta name="description" content="Aakar Publications - Sculpturing life">
 	<style>
 		@media only screen and (max-width: 600px) {
-			.add-cart-btn {
+			.largebtn-mobile {
 				width:100% !important;
 			}
 		}
@@ -62,7 +62,7 @@
 						</article>
 						<div class="add-to-cart-row">
 							<div class="add-cart-btn">
-								<a href="<?php echo $get_book_data['book_amz_url']; ?>" class="btn btn-outlined--primary"><span class="plus-icon"><img src="<?php echo base_url(); ?>assets/img/amazon.svg" width="20" height="20"/></span>Buy From Amazon</a>
+								<a href="<?php echo $get_book_data['book_amz_url']; ?>" class="btn btn-outlined--primary largebtn-mobile"><span class="plus-icon"><img src="<?php echo base_url(); ?>assets/img/amazon.svg" width="20" height="20"/></span>Buy From Amazon</a>
 							</div>
 						</div>
 					</div>
