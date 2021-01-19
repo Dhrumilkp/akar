@@ -116,7 +116,6 @@ jQuery(document).ready(function($) {
         /*------------------------
         	--> Slick Carousel
         ------------------------*/
-
         var $html = $('html');
         var $body = $('body');
         var $uptimoSlickSlider = $('.sb-slick-slider');

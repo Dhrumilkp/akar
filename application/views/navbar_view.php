@@ -3,8 +3,8 @@
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-lg-6">
-					<a href="index.html" class="site-brand">
-						<img src="theme/image/logo.jpg" alt="">
+					<a href="<?php echo base_url(); ?>" class="site-brand">
+						<img src="<?php echo base_url(); ?>theme/image/logo.jpg" alt="">
 					</a>
 				</div>
 				<div class="col-lg-6">
@@ -65,8 +65,8 @@
 		<div class="container">
 			<div class="row align-items-sm-end align-items-center">
 				<div class="col-md-4 col-7">
-					<a href="index.html" class="site-brand">
-						<img src="theme/image/logo.jpg" alt="" style="max-width: 70%;">
+					<a href="<?php echo base_url(); ?>" class="site-brand">
+						<img src="<?php echo base_url(); ?>theme/image/logo.jpg" alt="" style="max-width: 70%;">
 					</a>
 				</div>
 				<div class="col-md-5 order-3 order-md-2">

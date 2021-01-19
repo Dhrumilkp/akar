@@ -27,13 +27,27 @@ class Welcome extends CI_Controller {
 		$data['get_about_text_data'] = $this->Home_model->getabouttextdata();
         $this->load->view('About/About_view',$data);
 	}
-	public function shop()
+	public function shop($type,$id)
     {
-		$data['category_data'] = $this->Home_model->getcatdata();
-		$data['get_contact_data'] = $this->Home_model->getcontact_data();
-		$data['get_address_data'] = $this->Home_model->getaddress_data();
-		$data['get_email_data'] = $this->Home_model->getemail();
-        $this->load->view('Shope/Shope_view',$data);
+		if($type == "book")
+		{
+			$data['category_data'] = $this->Home_model->getcatdata();
+			$data['get_contact_data'] = $this->Home_model->getcontact_data();
+			$data['get_address_data'] = $this->Home_model->getaddress_data();
+			$data['get_email_data'] = $this->Home_model->getemail();
+			$data['get_book_data'] = $this->Home_model->getbookdatabasedid($id);
+			$this->load->view('Shope/Book_view',$data);
+		}
+		else
+		{
+			$data['category_data'] = $this->Home_model->getcatdata();
+			$data['get_contact_data'] = $this->Home_model->getcontact_data();
+			$data['get_address_data'] = $this->Home_model->getaddress_data();
+			$data['get_email_data'] = $this->Home_model->getemail();
+			$data['all_books_cat'] = $this->Home_model->getcallbookscat($id);
+			$this->load->view('Shope/Shope_view',$data);
+		}
+        
 	}
 	public function contact()
 	{
