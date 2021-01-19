@@ -44,7 +44,7 @@ class Welcome extends CI_Controller {
 			$data['get_contact_data'] = $this->Home_model->getcontact_data();
 			$data['get_address_data'] = $this->Home_model->getaddress_data();
 			$data['get_email_data'] = $this->Home_model->getemail();
-			$data['all_books_cat'] = $this->Home_model->getcallbookscat($id);
+			$data['book_data'] = $this->Home_model->getcallbookscat($id);
 			$this->load->view('Shope/Shope_view',$data);
 		}
         
