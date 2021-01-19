@@ -25,7 +25,7 @@
 	<div class="site-wrapper" id="top">
 		<?php $this->load->view('navbar_view'); ?>
 	</div>
-	<main class="inner-page-sec-padding-bottom" style="margin-top:50px;">
+	<main style="margin-top:50px;">
 		<div class="container">
 			<div class="row  mb--60">
 				<div class="col-lg-5 mb--30">
