@@ -45,7 +45,7 @@
         <!--=================================
         Home Slider Tab
         ===================================== -->
-        <section class="section-padding">
+        <section class="section-padding" style="padding-top:30px;">
             <h2 class="sr-only">Home Tab Slider Section</h2>
             <div class="container">
                 <div class="sb-custom-tab">
