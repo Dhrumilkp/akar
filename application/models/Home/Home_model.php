@@ -45,8 +45,17 @@ class Home_model extends CI_Model
             $filename=basename($file_name,$ext);
             $newFileName=$filename.time().".".$ext;
             $final_name = str_replace(' ', '', $newFileName);
-            move_uploaded_file($file_tmp=$_FILES["files"]["tmp_name"][$key],"uploads/slider/".$final_name);
-            array_push($filepath,$final_name);
+            if (!file_exists('uploads/slider/')) {
+                mkdir('uploads/slider/', 0777, true);
+                move_uploaded_file($file_tmp=$_FILES["files"]["tmp_name"][$key],"uploads/slider/".$final_name);
+                array_push($filepath,$final_name);
+            }
+            else
+            {
+                move_uploaded_file($file_tmp=$_FILES["files"]["tmp_name"][$key],"uploads/slider/".$final_name);
+                array_push($filepath,$final_name);
+            }
+            
         }
         foreach($filepath as $row)
         {
