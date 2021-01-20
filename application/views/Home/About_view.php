@@ -55,14 +55,14 @@
 							<div class="bg-holder bg-card" style="background-image: url('<?php echo base_url(); ?>assets/img/corner.png');"></div>
 							<div class="position-relative card-body">
 								<h6>About Publication Header Slider</h6>
-                                <div class="img-wrapper">
+                                <div>
                                     <?php 
                                         if(!empty($get_about_header_slider))
                                         {
                                             foreach($get_about_header_slider as $row)
                                             {
                                                 ?>
-                                                    <img src="uploads/About/<?php echo $row['sliders_path']; ?>" id="cover_slider_1" class="mr-5" width="100" height="100"/>
+                                                    <img src="uploads/About/<?php echo $row['sliders_path']; ?>" id="cover_slider_1" class="mr-5" tyle="width:100%; height:auto; margin-top:5px;border-radius:5px;"/>
                                                 <?
                                             }
                                         }
