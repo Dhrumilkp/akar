@@ -157,7 +157,7 @@ class Home_model extends CI_Model
             if (move_uploaded_file($_FILES["files"]["tmp_name"], $target_file)) {
                 // Upadting database 
                 $this->db->where('sliders_path',$postdata['oldimgname']);
-                $this->db->set('sliders_path',$_FILES["files"]["tmp_name"]);
+                $this->db->set('sliders_path',$_FILES["files"]["name"]);
                 $this->db->update('a_slider');
                 if($this->db->affected_rows() > 0 )
                 {
