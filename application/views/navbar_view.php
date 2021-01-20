@@ -19,7 +19,7 @@
 							</li>
 							<!-- Pages -->
 							<li class="menu-item has-children">
-								<a href="<?php echo base_url(); ?>shop">Shop</a>
+								<a href="<?php echo base_url(); ?>shopping">Shop</a>
 							</li>
 							<li class="menu-item">
 								<a href="<?php echo base_url(); ?>contact">Contact</a>
@@ -126,7 +126,7 @@
 						</li>
 						<!-- Pages -->
 						<li class="menu-item has-children">
-							<a href="<?php echo base_url(); ?>shop">Shop</a>
+							<a href="<?php echo base_url(); ?>shopping">Shop</a>
 						</li>
 						<li class="menu-item">
 							<a href="<?php echo base_url(); ?>contact">Contact</a>
