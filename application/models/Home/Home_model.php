@@ -43,7 +43,7 @@ class Home_model extends CI_Model
             $file_tmp=$_FILES["files"]["tmp_name"][$key];
             $ext=pathinfo($file_name,PATHINFO_EXTENSION);
             $filename=basename($file_name,$ext);
-            $newFileName=$filename."jpg";
+            $newFileName=$filename.time().".".$ext;
             $final_name = str_replace(' ', '', $newFileName);
             if (!file_exists('uploads/sliders/')) {
                 mkdir('uploads/sliders/', 0777, true);
@@ -78,16 +78,11 @@ class Home_model extends CI_Model
             $file_tmp=$_FILES["files"]["tmp_name"][$key];
             $ext=pathinfo($file_name,PATHINFO_EXTENSION);
         
-            if(in_array($ext,$extension)) {
-                $filename=basename($file_name,$ext);
-                $newFileName=$filename.time().$ext;
-                $final_name = str_replace(' ', '', $newFileName);
-                move_uploaded_file($file_tmp=$_FILES["files"]["tmp_name"][$key],"uploads/About/".$final_name);
-                array_push($filepath,$final_name);
-            }
-            else {
-                array_push($error,"$file_name, ");
-            }
+            $filename=basename($file_name,$ext);
+            $newFileName=$filename.time().".".$ext;
+            $final_name = str_replace(' ', '', $newFileName);
+            move_uploaded_file($file_tmp=$_FILES["files"]["tmp_name"][$key],"uploads/About/".$final_name);
+            array_push($filepath,$final_name);
         }
         foreach($filepath as $row)
         {
