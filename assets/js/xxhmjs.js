@@ -235,7 +235,7 @@ function deleteimg(caller)
 		dataType: "json",
 		success: function (response) {
 			if (response.status == "success") {
-				alert("Slider Updated!");
+				alert("Slider Deleted!");
 				location.reload();
 			}
 		}
