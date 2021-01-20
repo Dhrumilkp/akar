@@ -51,7 +51,7 @@ class Home_model extends CI_Model
                 array_push($filepath,$final_name);
             }
             else {
-                array_push($error,"$file_name, ");
+                array_push($error,$file_name);
             }
         }
         foreach($filepath as $row)
