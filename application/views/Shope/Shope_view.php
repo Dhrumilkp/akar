@@ -23,7 +23,7 @@
                         ?>
                             <div class="w-100 text-center">
                                 <img src="<?php echo base_url(); ?>assets/img/404.png"/>
-                                <h4>Opps the book you are looking for cannot be found!</h4>
+                                <h4>Opps cant find any book or the book you requested!</h4>
                             </div>
                         <?
                     }
