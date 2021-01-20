@@ -67,11 +67,19 @@
 									<?php 
 										if(!empty($get_slider_data))
 										{
+											$index = 0;
 											foreach($get_slider_data as $row)
 											{
+
 												?>
 													<img src="uploads/sliders/<?php echo $row['sliders_path']; ?>" id="cover_slider_1" class="mr-5" style="width:100%; height:auto; margin-top:5px;border-radius:5px;"/>
+													<a href="javascript:;" onclick="updateimg(this)" data-id="<?php echo $index; ?>" data-img-old="<?php echo $row['sliders_path']; ?>">Edit</a>
+													<form id="home_slider_form<?php echo $index; ?>" enctype="multipart/form-data">
+														<input type="file" name="files" accept=".jpg" class="form-control d-none" id="home_slider<?php echo $index; ?>">
+													</form>
+													<a href="javascript:;" onclick="deleteimg(<?php echo $row['sliders_path']; ?>)">Delete</a>
 												<?
+												$index++;
 											}
 										}
 									?>

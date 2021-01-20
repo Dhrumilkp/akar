@@ -58,6 +58,7 @@ $route['xxauth'] = 'Admin/Admin_controller/authuser';
 $route['home'] = 'Home/Home_controller/home';
 $route['createcat'] = 'Home/Home_controller/createcat';
 $route['updateslider'] = 'Home/Home_controller/updateslider';
+$route['updatehomeslider'] = 'Home/Home_controller/updatehomeslider';
 $route['logout'] = 'Home/Home_controller/logout';
 // About
 $route['about'] = 'Welcome/about';

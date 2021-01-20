@@ -89,6 +89,10 @@ class Home_controller extends CI_Controller
     {
         $this->Home_model->aboutusdata($_POST);
     }
+    public function updatehomeslider()
+    {
+        $this->Home_model->updatehomeslider($_POST);
+    }
     public function ashop()
     {
         if(isset($_SESSION['csrf']))

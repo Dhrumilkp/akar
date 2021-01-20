@@ -191,3 +191,35 @@ $('#subtitle_form').submit(function(e){
 		});
 	}
 });
+var oldname;
+var currentindex;
+function updateimg(caller)
+{
+	var indexid = $(caller).attr('data-id');
+	currentindex = indexid;
+	var oldimgname = $(caller).attr('data-img-old');
+	oldname = oldimgname;
+	$('#home_slider'+indexid+'').click();
+	$('#home_slider'+indexid+'').change(function(){
+		$('#home_slider_form'+indexid+'').submit();
+	});	
+	$('#home_slider_form'+indexid+'').submit(function(e){
+		e.preventDefault();
+		var formData = new FormData($(this)[0]);
+		formData.append('oldimgname', oldname);
+		$.ajax({
+			type: "POST",
+			url: ""+url+"updatehomeslider",
+			data: formData ,
+			dataType: "json",
+			processData: false,
+            contentType: false,
+			success: function (response) {
+				if (response.status == "success") {
+					alert("Slider Updated!");
+					location.reload();
+				}
+			}
+		});
+	});
+}
