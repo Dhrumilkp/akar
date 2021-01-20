@@ -23,13 +23,19 @@
 						<?php 
 							if(!empty($get_contact_data))
 							{
-								foreach($get_contact_data as $row)
-								{
-									?>
-										<p><span class="text text-center w-100">+<?php echo $row['contact_number']; ?></span>
-										</p>
-									<?
-								}
+								?>
+								<div class="contact-wrapper d-flex" style="flex-wrap: wrap;justify-content: space-evenly;">
+								<?
+									foreach($get_contact_data as $row)
+									{
+										?>
+											<p><span class="text text-center w-100">+<?php echo $row['contact_number']; ?></span>
+											</p>
+										<?
+									}
+								?>
+								</div>
+								<?
 							}
 						?>
 						<p>
