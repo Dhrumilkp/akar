@@ -171,6 +171,18 @@ class Home_model extends CI_Model
             }
         }
     }
+    public function deleteslider($postdata)
+    {
+        $this->db->where('sliders_path',$postdata['imgname']);
+        $this->db->delete('a_slider');
+        if($this->db->affected_rows() > 0 )
+        {
+            $res = array(
+                'status' => 'success'
+            );
+            echo json_encode($res);
+        }
+    }
     public function updatecontact($postdata)
     {
         $data = array(

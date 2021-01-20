@@ -77,7 +77,7 @@
 													<form id="home_slider_form<?php echo $index; ?>" enctype="multipart/form-data">
 														<input type="file" name="files" accept=".jpg" class="form-control d-none" id="home_slider<?php echo $index; ?>">
 													</form>
-													<a href="javascript:;" onclick="deleteimg(<?php echo $row['sliders_path']; ?>)">Delete</a>
+													<a href="javascript:;" onclick="deleteimg(this)" data-id="<?php echo $index; ?>" data-img-old="<?php echo $row['sliders_path']; ?>">Delete</a>
 												<?
 												$index++;
 											}

@@ -223,3 +223,21 @@ function updateimg(caller)
 		});
 	});
 }
+function deleteimg(caller)
+{
+	var indexid = $(caller).attr('data-id');
+	currentindex = indexid;
+	var oldimgname = $(caller).attr('data-img-old');
+	$.ajax({
+		type: "POST",
+		url: ""+url+"deleteslider",
+		data: {imgname:oldimgname} ,
+		dataType: "json",
+		success: function (response) {
+			if (response.status == "success") {
+				alert("Slider Updated!");
+				location.reload();
+			}
+		}
+	});
+}
