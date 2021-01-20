@@ -70,7 +70,7 @@
 											foreach($get_slider_data as $row)
 											{
 												?>
-													<img src="uploads/Slider/<?php echo $row['sliders_path']; ?>" id="cover_slider_1" class="mr-5" width="100" height="100"/>
+													<img src="uploads/sliders/<?php echo $row['sliders_path']; ?>" id="cover_slider_1" class="mr-5" width="100" height="100"/>
 												<?
 											}
 										}

@@ -33,7 +33,7 @@
                         {
                             ?>
                                 <div class="single-slide" style="background:url(
-                                    'uploads/Slider/<?php echo $row['sliders_path']; ?>'
+                                    'uploads/sliders/<?php echo $row['sliders_path']; ?>'
                                 ); height:500px;background-size:cover;">
                                 </div>
                             <?
