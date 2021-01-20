@@ -80,7 +80,7 @@ class Home_model extends CI_Model
         
             if(in_array($ext,$extension)) {
                 $filename=basename($file_name,$ext);
-                $newFileName=$filename.time().".".$ext;
+                $newFileName=$filename.time().$ext;
                 $final_name = str_replace(' ', '', $newFileName);
                 move_uploaded_file($file_tmp=$_FILES["files"]["tmp_name"][$key],"uploads/About/".$final_name);
                 array_push($filepath,$final_name);
