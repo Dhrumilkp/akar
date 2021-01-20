@@ -63,14 +63,14 @@
 							<div class="position-relative card-body">
 								<h6>Header Slider Image</h6>
 								<div class="display-4 fs-4 mb-2 font-weight-normal text-sans-serif text-warning" id="total_category_count"><?php echo $get_slider_count; ?></div>
-									<div class="d-flex">
+									<div>
 									<?php 
 										if(!empty($get_slider_data))
 										{
 											foreach($get_slider_data as $row)
 											{
 												?>
-													<img src="uploads/sliders/<?php echo $row['sliders_path']; ?>" id="cover_slider_1" class="mr-5" width="100" height="100"/>
+													<img src="uploads/sliders/<?php echo $row['sliders_path']; ?>" id="cover_slider_1" class="mr-5" style="width:100%; height:auto; margin-top:5px;border-radius:5px;"/>
 												<?
 											}
 										}
