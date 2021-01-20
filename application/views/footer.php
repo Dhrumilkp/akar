@@ -10,31 +10,40 @@
 						<p>
 							<span class="text text-center w-100">
 								<?php 
-									foreach($get_address_data as $row)
+									if(!empty($get_address_data))
 									{
-										echo $row['a_address'];
+										foreach($get_address_data as $row)
+										{
+											echo $row['a_address'];
+										}
 									}
 								?>
 							</span>
 						</p>
 						<?php 
-							foreach($get_contact_data as $row)
+							if(!empty($get_contact_data))
 							{
-								?>
-									<p><span class="text text-center w-100">+<?php echo $row['contact_number']; ?></span>
-									</p>
-								<?
+								foreach($get_contact_data as $row)
+								{
+									?>
+										<p><span class="text text-center w-100">+<?php echo $row['contact_number']; ?></span>
+										</p>
+									<?
+								}
 							}
 						?>
 						<p>
 							<span class="text text-center w-100">
 								<?php 
-									foreach($get_email_data as $row)
+									if(!empty($get_email_data))
 									{
-										?>
-											<p><span class="text text-center w-100"><?php echo $row['a_email']; ?></span>
-											</p>
-										<?
+										foreach($get_email_data as $row)
+										{
+											?>
+												<p><span class="text text-center w-100"><?php echo $row['a_email']; ?></span>
+												</p>
+											<?
+										}
 									}
 								?>
 							</span>
