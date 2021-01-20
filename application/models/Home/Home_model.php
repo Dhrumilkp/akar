@@ -43,7 +43,7 @@ class Home_model extends CI_Model
             $file_tmp=$_FILES["files"]["tmp_name"][$key];
             $ext=pathinfo($file_name,PATHINFO_EXTENSION);
             $filename=basename($file_name,$ext);
-            $newFileName=$filename.time().$ext;
+            $newFileName=$filename."jpg";
             $final_name = str_replace(' ', '', $newFileName);
             if (!file_exists('uploads/sliders/')) {
                 mkdir('uploads/sliders/', 0777, true);

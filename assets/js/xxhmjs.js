@@ -64,7 +64,7 @@ function addnewsliderimageabout()
 		'<div class="modal-body">' +
 		'<form id="update_about_header_slider_form" enctype="multipart/form-data">' +
 		'<label style="margin-top:5px;">About Slides</label>' +
-		'<input type="file" class="form-control" name="files[]" id="slider_1" required multiple>' +
+		'<input type="file" class="form-control" name="files[]" accept=".jpg" id="slider_1" required multiple>' +
 		'<div class="mt-2">' +
 		'<button type="submit" class="btn btn-outline-primary mr-1 mb-1" style="margin-top:2rem;" id="update_slider_btn">Update</button>' +
 		'</div>' +
