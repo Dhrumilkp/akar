@@ -59,13 +59,29 @@ $(document).on('submit', '#edit-book-form', function (e) {
 		});
 	}
 });
-function editbook(bookid)
+function editbook(caller,bookid)
 {
-	$('#bookid').val(bookid);
-	$('#edit_book_model').modal('show');
+	$(caller).html('Please wait...');
+	$.ajax({
+		type: "POST",
+		url: ""+url+"getbookdata",
+		data: {bookid:bookid},
+		dataType: "json",
+		success: function (response) {
+			$('#book_title_edit').val(response.book_title);
+			$('#book_cat_edit').val(response.book_cat);
+			$('#book_desc_edit').val(response.book_desc);
+			$('#book_cost_edit').val(response.book_cost);
+			$('#book_amz_url_edit').val(response.book_amz_url);
+			$('#bookid').val(bookid);
+			$('#edit_book_model').modal('show');
+		}
+	});
+	
 }
 function deletebook(bookid)
 {
+	$(caller).html('Please wait...');
 	$.ajax({
 		type: "POST",
 		url: ""+url+"deletebook",

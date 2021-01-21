@@ -105,6 +105,10 @@ class Home_controller extends CI_Controller
     {
         $this->Home_model->editbook($_POST);
     }
+    public function getbookdata()
+    {
+        $this->Home_model->getbookdataedit($_POST);
+    }
     public function ashop()
     {
         if(isset($_SESSION['csrf']))

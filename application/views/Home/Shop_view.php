@@ -81,8 +81,8 @@
                                                             <div class="card-body">
                                                                 <h5 class="card-title"><?php echo $row['book_title'] ?></h5>
                                                                 <h6>Category    :   <?php echo $row['cat_name'] ?></h6>
-                                                                <button value="<?php echo $row['book_id']; ?>" class="btn btn-primary btn-md" onclick="editbook(<?php echo $row['book_id']; ?>)">Edit Book</button>
-                                                                <button value="<?php echo $row['book_id']; ?>" class="btn btn-danger btn-md" onclick="deletebook(<?php echo $row['book_id']; ?>)">Delete Book</button>
+                                                                <button value="<?php echo $row['book_id']; ?>" class="btn btn-primary btn-md" onclick="editbook(this,<?php echo $row['book_id']; ?>)">Edit Book</button>
+                                                                <button value="<?php echo $row['book_id']; ?>" class="btn btn-danger btn-md" onclick="deletebook(this,<?php echo $row['book_id']; ?>)">Delete Book</button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -178,11 +178,11 @@
                     <form id="edit-book-form" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="name">Title Of Book</label>
-                            <input class="form-control" name="book_title" id="book_title" type="text" placeholder="book title" required>
+                            <input class="form-control" name="book_title" id="book_title_edit" type="text" placeholder="book title" required>
                         </div>
                         <div class="form-group">
                             <label for="name">Book Category</label>
-                            <select name="book_cat" class="form-control" required>
+                            <select name="book_cat" class="form-control" id="book_cat_edit" required>
                                 <?php 
                                     if(!empty($book_cat))
                                     {
@@ -201,15 +201,15 @@
                         </div>
                         <div class="form-group">
                             <label for="name">Book Description</label>
-                            <textarea name="book_desc" id="book_desc" cols="30" rows="10" class="form-control" required></textarea>
+                            <textarea name="book_desc" id="book_desc_edit" cols="30" rows="10" class="form-control" required></textarea>
                         </div>
                         <div class="form-group">
                             <label for="name">Book Cost</label>
-                            <input class="form-control" name="book_cost" id="book_cost" type="number" placeholder="book cost" required>
+                            <input class="form-control" name="book_cost" id="book_cost_edit" type="number" placeholder="book cost" required>
                         </div>
                         <div class="form-group">
                             <label for="name">Book Amazon URL</label>
-                            <input class="form-control" name="book_amz_url" id="book_amz_url" type="url" placeholder="book url on amazon" required>
+                            <input class="form-control" name="book_amz_url" id="book_amz_url_edit" type="url" placeholder="book url on amazon" required>
                         </div>
                         <div class="form-group">
                             <label for="name">Book Images</label>

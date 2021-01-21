@@ -531,4 +531,18 @@ class Home_model extends CI_Model
             echo json_encode($res);
         }
     }
+    public function getbookdataedit($postdata)
+    {
+        $sql = "SELECT a_book_data.id as book_id,a_book_data.book_title,a_book_data.book_cat,a_book_data.book_desc,a_book_data.book_cost,a_book_data.book_amz_url,a_book_data.book_img_path,a_cat.cat_name FROM a_book_data JOIN a_cat ON a_book_data.book_cat = a_cat.id WHERE a_book_data.id ='".$postdata['bookid']."'";
+        $query = $this->db->query($sql);
+        if($query->num_rows() > 0)
+        {
+            $result = $query->row_array();
+            echo json_encode($result);
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
