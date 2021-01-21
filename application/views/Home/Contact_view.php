@@ -92,7 +92,7 @@
 									}
 								?>
 								<div class="container" style="padding-bottom:20px;">
-									<a class="font-weight-semi-bold fs--1 text-nowrap" href="javascript:;" onclick="addaddressinformation()">Add address
+									<a class="font-weight-semi-bold fs--1 text-nowrap" href="javascript:;" onclick="addaddressinformation()">Update address
 									</a>
 								</div>
 							</div>

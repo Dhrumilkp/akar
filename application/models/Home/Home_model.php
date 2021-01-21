@@ -251,17 +251,38 @@ class Home_model extends CI_Model
     }
     public function updateaddress($postdata)
     {
-        $data = array(
-            'a_address' => $postdata['address']
-        );
-        $this->db->insert('a_address',$data);
-        if($this->db->affected_rows() > 0)
+        $query = $this->db->get('a_address');
+        if($query->num_rows() > 0)
         {
-            $res = array(
-                'status' => 'success'
+            // Update
+            $this->db->truncate('a_address');
+            $data = array(
+                'a_address' => $postdata['address']
             );
-            echo json_encode($res);
+            $this->db->insert('a_address',$data);
+            if($this->db->affected_rows() > 0)
+            {
+                $res = array(
+                    'status' => 'success'
+                );
+                echo json_encode($res);
+            }
         }
+        else
+        {
+            $data = array(
+                'a_address' => $postdata['address']
+            );
+            $this->db->insert('a_address',$data);
+            if($this->db->affected_rows() > 0)
+            {
+                $res = array(
+                    'status' => 'success'
+                );
+                echo json_encode($res);
+            }
+        }
+        
     }
     public function updategoogleurl($postdata)
     {
