@@ -120,15 +120,17 @@
 										{
 											?>
 												<div class="display-4 fs-4 mb-2 font-weight-normal text-sans-serif text-warning" id="contact_number_count"><?php echo $row['a_email']; ?></div>
+												<a href="javascript:;" onclick="editemail(this)" data-current-email="<?php echo $row['a_email']; ?>">Edit Email</a>
+												<a href="javascript:;" onclick="deleteemail(this)" data-current-email="<?php echo $row['a_email']; ?>">Delete Email</a>
 											<?
 										}
 									}
 								?>
-								<div class="container" style="padding-bottom:20px;">
-									<a class="font-weight-semi-bold fs--1 text-nowrap" href="javascript:;" onclick="addemailaddress()">Add Email Address
-                                    </a>
-								</div>
-                            </div>
+							</div>
+							<div class="card-footer">
+								<a href="javascript:;" onclick="addemailaddress()">Add Email Address
+                            	</a>
+							</div>
                         </div>
                     </div>                        
                     <div class="container">

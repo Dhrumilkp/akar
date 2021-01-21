@@ -64,6 +64,14 @@ class Home_controller extends CI_Controller
     {
         $this->Home_model->updatemail($_POST);
     }
+    public function updateemaildata()
+    {
+        $this->Home_model->updateemaildata($_POST);
+    }
+    public function deleteemail()
+    {
+        $this->Home_model->deleteemail($_POST);
+    }
     public function aabout()
     {
         if(isset($_SESSION['csrf']))

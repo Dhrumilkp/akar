@@ -579,10 +579,35 @@ class Home_model extends CI_Model
             echo json_encode($res);
         }
     }
+    public function updateemaildata($postdata)
+    {
+        $this->db->where('a_email',$postdata['current']);
+        $this->db->set('a_email',$postdata['email']);
+        $this->db->update('a_email');
+        if($this->db->affected_rows() > 0)
+        {
+            $res = array(
+                'status'    => 'success'
+            );
+            echo json_encode($res);
+        }
+    }
     public function deletenumber($postdata)
     {
         $this->db->where('contact_number',$postdata['current']);
         $this->db->delete('a_contact');
+        if($this->db->affected_rows() > 0)
+        {
+            $res = array(
+                'status'    => 'success'
+            );
+            echo json_encode($res);
+        }
+    }
+    public function deleteemail($postdata)
+    {
+        $this->db->where('a_email',$postdata['current']);
+        $this->db->delete('a_email');
         if($this->db->affected_rows() > 0)
         {
             $res = array(

@@ -284,3 +284,63 @@ function deletenumber(caller)
         }
     });
 }
+function deleteemail(caller)
+{
+    var current = $(caller).attr('data-current-email');
+    $.ajax({
+        type: "POST",
+        url: ""+url+"deleteemail",
+        data: {current:current},
+        dataType: "json",
+        success: function (response) {
+            if (response.status == "success") {
+                alert("Email Deleted");
+                location.reload();
+            }
+        }
+    });
+}
+var currentemailglobal;
+function editemail(caller)
+{
+    currentemailglobal = $(caller).attr('data-current-email');
+    var addemailaddress = '<div class="modal" id="update_email_address" tabindex="-1">' +
+    '<div class="modal-dialog">' +
+    '<div class="modal-content">' +
+    '<div class="modal-header">' +
+    '<h5 class="modal-title">Add Email Address</h5>' +
+    '<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>' +
+    '</div>' +
+    '<div class="modal-body">' +
+    '<form id="update_email_address_from" enctype="multipart/form-data">' +
+    '<input type="email" class="form-control" name="email" id="email" required>' +
+    '<div class="mt-2">' +
+    '<button type="submit" class="btn btn-outline-primary mr-1 mb-1" style="margin-top:2rem;" id="update_email">Update</button>' +
+    '</div>' +
+    '</form>' +
+    '</div>' +
+    '</div>' +
+    '</div>' +
+    '</div>';
+    $('#dynamic_data_model').html(addemailaddress);
+    $('#update_email_address').modal('show');
+}
+$(document).on('submit','#update_email_address_from',function(e){
+    e.preventDefault();
+    var formData = new FormData($(this)[0]);
+    formData.append('current', currentemailglobal);
+    $.ajax({
+        type: "POST",
+        url: ""+url+"updateemaildata",
+        data: formData,
+        dataType: "json",
+        processData: false,
+        contentType: false,
+        success: function (response) {
+            if (response.status == "success") {
+                alert("Email Updated");
+                location.reload();
+            }
+        }
+    });
+});

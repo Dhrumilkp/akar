@@ -84,3 +84,5 @@ $route['updateemail'] = 'Home/Home_controller/updateemail';
 $route['admincontact'] = 'Home/Home_controller/admincontact';
 $route['updatecontactnumber'] = 'Home/Home_controller/updatecontactnumber';
 $route['deletenumber'] = 'Home/Home_controller/deletenumber';
+$route['updateemaildata'] = 'Home/Home_controller/updateemaildata';
+$route['deleteemail'] = 'Home/Home_controller/deleteemail';
