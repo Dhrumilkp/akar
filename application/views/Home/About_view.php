@@ -59,10 +59,16 @@
                                     <?php 
                                         if(!empty($get_about_header_slider))
                                         {
+											$index = 0;
                                             foreach($get_about_header_slider as $row)
                                             {
                                                 ?>
-                                                    <img src="uploads/About/<?php echo $row['sliders_path']; ?>" id="cover_slider_1" class="mr-5" tyle="width:100%; height:auto; margin-top:5px;border-radius:5px;"/>
+													<img src="uploads/About/<?php echo $row['sliders_path']; ?>" id="cover_slider_1" class="mr-5" style="width:100%; height:auto; margin-top:5px;border-radius:5px;"/>
+													<a href="javascript:;" onclick="updateimgabout(this)" data-id="<?php echo $index; ?>" data-img-old="<?php echo $row['sliders_path']; ?>">Edit</a>
+													<form id="about_slider_form<?php echo $index; ?>" enctype="multipart/form-data">
+														<input type="file" name="files" accept=".jpg" class="form-control d-none" id="about_slider<?php echo $index; ?>">
+													</form>
+													<a href="javascript:;" onclick="deleteimgabout(this)" data-id="<?php echo $index; ?>" data-img-old="<?php echo $row['sliders_path']; ?>">Delete</a>
                                                 <?
                                             }
                                         }

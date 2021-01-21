@@ -223,6 +223,37 @@ function updateimg(caller)
 		});
 	});
 }
+function updateimgabout(caller)
+{
+	var indexid = $(caller).attr('data-id');
+	currentindex = indexid;
+	var oldimgname = $(caller).attr('data-img-old');
+	oldname = oldimgname;
+	$('#about_slider'+indexid+'').click();
+	$('#about_slider'+indexid+'').change(function(){
+		$('#about_slider_form'+indexid+'').submit();
+	});	
+	$('#about_slider_form'+indexid+'').submit(function(e){
+		e.preventDefault();
+		var formData = new FormData($(this)[0]);
+		formData.append('oldimgname', oldname);
+		$.ajax({
+			type: "POST",
+			url: ""+url+"updateaboutslider",
+			data: formData ,
+			dataType: "json",
+			processData: false,
+            contentType: false,
+			success: function (response) {
+				console.log(response);
+				if (response.status == "success") {
+					alert("Slider Updated!");
+					location.reload();
+				}
+			}
+		});
+	});
+}
 function deleteimg(caller)
 {
 	var indexid = $(caller).attr('data-id');
@@ -231,6 +262,24 @@ function deleteimg(caller)
 	$.ajax({
 		type: "POST",
 		url: ""+url+"deleteslider",
+		data: {imgname:oldimgname} ,
+		dataType: "json",
+		success: function (response) {
+			if (response.status == "success") {
+				alert("Slider Deleted!");
+				location.reload();
+			}
+		}
+	});
+}
+function deleteimgabout(caller)
+{
+	var indexid = $(caller).attr('data-id');
+	currentindex = indexid;
+	var oldimgname = $(caller).attr('data-img-old');
+	$.ajax({
+		type: "POST",
+		url: ""+url+"deleteaboutslider",
 		data: {imgname:oldimgname} ,
 		dataType: "json",
 		success: function (response) {

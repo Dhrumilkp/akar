@@ -171,10 +171,58 @@ class Home_model extends CI_Model
             }
         }
     }
+    public function updateaboutslider($postdata)
+    {
+        $target_dir = "uploads/About/";
+        $target_file = $target_dir . basename($_FILES["files"]["name"]);
+        $uploadOk = 1;
+        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+        // Check if image file is a actual image or fake image
+        $check = getimagesize($_FILES["files"]["tmp_name"]);
+        if($check !== false) {
+            $uploadOk = 1;
+        } else {
+            $uploadOk = 0;
+        }
+        // Check if $uploadOk is set to 0 by an error
+        if ($uploadOk == 0) {
+            echo "Sorry, your file was not uploaded.";
+        // if everything is ok, try to upload file
+        } else {
+            if (move_uploaded_file($_FILES["files"]["tmp_name"], $target_file)) {
+                // Upadting database 
+                $this->db->where('sliders_path',$postdata['oldimgname']);
+                $this->db->set('sliders_path',$_FILES["files"]["name"]);
+                $this->db->update('a_about_slider');
+                if($this->db->affected_rows() > 0 )
+                {
+                    $res = array(
+                        'status' => 'success'
+                    );
+                    echo json_encode($res);
+                }
+            } else {
+                echo "Sorry, there was an error uploading your file.";
+            }
+        }
+    }
     public function deleteslider($postdata)
     {
         $this->db->where('sliders_path',$postdata['imgname']);
         $this->db->delete('a_slider');
+        if($this->db->affected_rows() > 0 )
+        {
+            $res = array(
+                'status' => 'success'
+            );
+            echo json_encode($res);
+        }
+    }
+    public function deleteaboutslider($postdata)
+    {
+        $this->db->where('sliders_path',$postdata['imgname']);
+        $this->db->delete('a_about_slider');
         if($this->db->affected_rows() > 0 )
         {
             $res = array(

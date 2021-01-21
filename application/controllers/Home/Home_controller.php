@@ -101,9 +101,17 @@ class Home_controller extends CI_Controller
     {
         $this->Home_model->updatehomeslider($_POST);
     }
+    public function updateaboutslider()
+    {
+        $this->Home_model->updateaboutslider($_POST);
+    }
     public function deleteslider()
     {
         $this->Home_model->deleteslider($_POST);
+    }
+    public function deleteaboutslider()
+    {
+        $this->Home_model->deleteaboutslider($_POST);
     }
     public function deletebook()
     {
