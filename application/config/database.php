@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'referfunnel.c8ojo6jdrmqh.us-east-2.rds.amazonaws.com',
-	'username' => 'admin',
-	'password' => 'dhrumilpatel',
-	'database' => 'aakar',
+	'hostname' => 'localhost',
+	'username' => 'partuehb_akaradm',
+	'password' => 'akar@2021',
+	'database' => 'partuehb_akar',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
