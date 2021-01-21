@@ -82,3 +82,5 @@ $route['udpateaddress'] = 'Home/Home_controller/udpateaddress';
 $route['updategurl'] = 'Home/Home_controller/updategurl';
 $route['updateemail'] = 'Home/Home_controller/updateemail';
 $route['admincontact'] = 'Home/Home_controller/admincontact';
+$route['updatecontactnumber'] = 'Home/Home_controller/updatecontactnumber';
+$route['deletenumber'] = 'Home/Home_controller/deletenumber';

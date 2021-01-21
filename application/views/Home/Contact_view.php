@@ -62,6 +62,8 @@
 										{
 											?>
 												<div class="display-4 fs-4 mb-2 font-weight-normal text-sans-serif text-warning" id="contact_number_count">+<?php echo $row['contact_number']; ?></div>
+												<a href="javascript:;" onclick="editnumber(this)" data-current-number="<?php echo $row['contact_number']; ?>">Edit Number</a>
+												<a href="javascript:;" onclick="deletenumber(this)" data-current-number="<?php echo $row['contact_number']; ?>">Delete Number</a>
 											<?
 										}
 									}

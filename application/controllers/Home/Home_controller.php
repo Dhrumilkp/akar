@@ -127,4 +127,12 @@ class Home_controller extends CI_Controller
     {
         $this->Home_model->uploadbook($_POST);
     }
+    public function updatecontactnumber()
+    {
+        $this->Home_model->updatecontactnumber($_POST);
+    }
+    public function deletenumber()
+    {
+        $this->Home_model->deletenumber($_POST);
+    }
 }

@@ -545,4 +545,29 @@ class Home_model extends CI_Model
             return false;
         }
     }
+    public function updatecontactnumber($postdata)
+    {
+        $this->db->where('contact_number',$postdata['current']);
+        $this->db->set('contact_number',$postdata['contact']);
+        $this->db->update('a_contact');
+        if($this->db->affected_rows() > 0)
+        {
+            $res = array(
+                'status'    => 'success'
+            );
+            echo json_encode($res);
+        }
+    }
+    public function deletenumber($postdata)
+    {
+        $this->db->where('contact_number',$postdata['current']);
+        $this->db->delete('a_contact');
+        if($this->db->affected_rows() > 0)
+        {
+            $res = array(
+                'status'    => 'success'
+            );
+            echo json_encode($res);
+        }
+    }
 }

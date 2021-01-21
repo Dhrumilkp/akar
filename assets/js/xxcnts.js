@@ -224,3 +224,63 @@ $(document).on('submit','#add_email_address_from',function(e){
         });
     }
 });
+var currentnumberglobal;
+function editnumber(caller)
+{
+    currentnumberglobal = $(caller).attr('data-current-number');
+    var addnewcontactmodal = '<div class="modal" id="update_new_contact" tabindex="-1">' +
+    '<div class="modal-dialog">' +
+    '<div class="modal-content">' +
+    '<div class="modal-header">' +
+    '<h5 class="modal-title">Update Contact Number Modal</h5>' +
+    '<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>' +
+    '</div>' +
+    '<div class="modal-body">' +
+    '<form id="update_new_contact_form" enctype="multipart/form-data">' +
+    '<input type="number" class="form-control" name="contact" id="contact" required>' +
+    '<div class="mt-2">' +
+    '<button type="submit" class="btn btn-outline-primary mr-1 mb-1" style="margin-top:2rem;" id="update_contact_number">Update</button>' +
+    '</div>' +
+    '</form>' +
+    '</div>' +
+    '</div>' +
+    '</div>' +
+    '</div>';
+    $('#dynamic_data_model').html(addnewcontactmodal);
+    $('#update_new_contact').modal('show');
+}
+$(document).on('submit','#update_new_contact_form',function(e){
+    e.preventDefault();
+    var formData = new FormData($(this)[0]);
+    formData.append('current', currentnumberglobal);
+    $.ajax({
+        type: "POST",
+        url: ""+url+"updatecontactnumber",
+        data: formData,
+        dataType: "json",
+        processData: false,
+        contentType: false,
+        success: function (response) {
+            if (response.status == "success") {
+                alert("Contact Number Updated");
+                location.reload();
+            }
+        }
+    });
+});
+function deletenumber(caller)
+{
+    var current = $(caller).attr('data-current-number');
+    $.ajax({
+        type: "POST",
+        url: ""+url+"deletenumber",
+        data: {current:current},
+        dataType: "json",
+        success: function (response) {
+            if (response.status == "success") {
+                alert("Contact Number Deleted");
+                location.reload();
+            }
+        }
+    });
+}
