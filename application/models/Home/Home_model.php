@@ -485,4 +485,50 @@ class Home_model extends CI_Model
             return false;
         }
     }
+    public function deletebook($postdata)
+    {
+        $this->db->where('id',$postdata['bookid']);
+        $this->db->delete('a_book_data');
+        if($this->db->affected_rows() > 0)
+        {
+            $res = array(
+                'status'    => 'success'
+            );
+            echo json_encode($res);
+        }
+    }
+    public function editbook($postdata)
+    {
+        $extension=array("jpeg","jpg","png","gif");
+        $filepath = [];
+        foreach($_FILES["files"]["tmp_name"] as $key=>$tmp_name) {
+            $file_name=$_FILES["files"]["name"][$key];
+            $file_tmp=$_FILES["files"]["tmp_name"][$key];
+            $ext=pathinfo($file_name,PATHINFO_EXTENSION);
+        
+            $filename=basename($file_name,$ext);
+            $newFileName=$filename.time().".".$ext;
+            $final_name = str_replace(' ', '', $newFileName);
+            move_uploaded_file($file_tmp=$_FILES["files"]["tmp_name"][$key],"uploads/Books/".$final_name);
+            array_push($filepath,$final_name);
+        }
+        $data = array(
+            'book_title'    => $postdata['book_title'],
+            'book_cat'      => $postdata['book_cat'],
+            'book_desc'     => $postdata['book_desc'],
+            'book_cost'     => $postdata['book_cost'],
+            'book_amz_url'  => $postdata['book_amz_url'],
+            'created_at'    => time(),
+            'book_img_path'     => implode(',',$filepath)
+        );
+        $this->db->where('id',$postdata['bookid']);
+        $this->db->update('a_book_data',$data);
+        if($this->db->affected_rows() > 0)
+        {
+            $res = array(
+                'status'    => 'success'
+            );
+            echo json_encode($res);
+        }
+    }
 }

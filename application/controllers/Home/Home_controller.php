@@ -97,6 +97,14 @@ class Home_controller extends CI_Controller
     {
         $this->Home_model->deleteslider($_POST);
     }
+    public function deletebook()
+    {
+        $this->Home_model->deletebook($_POST);
+    }
+    public function editbook()
+    {
+        $this->Home_model->editbook($_POST);
+    }
     public function ashop()
     {
         if(isset($_SESSION['csrf']))

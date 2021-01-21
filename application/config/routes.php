@@ -71,6 +71,8 @@ $route['shop/(:any)/(:any)'] = 'Welcome/shop/$1/$2';
 $route['shopping'] = 'Welcome/shopping';
 $route['ashop'] = 'Home/Home_controller/ashop';
 $route['uploadbook'] = 'Home/Home_controller/uploadbook';
+$route['deletebook'] = 'Home/Home_controller/deletebook';
+$route['editbook'] = 'Home/Home_controller/editbook';
 // COntact
 $route['contact'] = 'Welcome/contact';
 $route['updatecontact'] = 'Home/Home_controller/updatecontact';
