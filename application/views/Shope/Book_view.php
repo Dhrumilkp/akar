@@ -51,7 +51,7 @@
 						<ul class="list-unstyled">
 							<li>Brands: <a href="<?php echo base_url(); ?>" class="list-value font-weight-bold"> Aakar Publication</a></li>
 							<li>Availability: <span class="list-value"> In Stock</span></li>
-							<li>Author name: <span class="list-value"> Dhrumil</span></li>
+							<li>Author name: <span class="list-value"> Suresh Prajapati</span></li>
 						</ul>
 						<div class="price-block">
 							<span class="price-new">₹<?php echo $get_book_data['book_cost']; ?></span>
