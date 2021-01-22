@@ -13,6 +13,7 @@ class Home_controller extends CI_Controller
             $data['category_count'] = $this->Home_model->getcat_count();
             $data['get_slider_data'] = $this->Home_model->getslider_data();
             $data['get_slider_count'] = $this->Home_model->getslider_data_count();
+            $data['category_data'] = $this->Home_model->getcatdata();
             $this->load->view('Home/Home_view',$data);
         }
         else

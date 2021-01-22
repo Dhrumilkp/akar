@@ -50,6 +50,19 @@
 							<div class="bg-holder bg-card" style="background-image: url('<?php echo base_url(); ?>assets/img/corner.png');"></div>
 							<div class="position-relative card-body">
 								<h6>TOTAL CATEGORY</h6>
+								<ul class="mt-2 mb-2" style="list-style:none;">
+									<?php 
+										if(!empty($category_data))
+										{
+											foreach($category_data as $row)
+											{
+												?>
+													<li data-id="<?php echo $row['id'] ?>"><?php echo $row['cat_name']; ?></li>
+												<?
+											}
+										}
+									?>
+								</ul>
 								<div class="display-4 fs-4 mb-2 font-weight-normal text-sans-serif text-warning" id="total_category_count"><?php echo $category_count; ?></div>
 									<a class="font-weight-semi-bold fs--1 text-nowrap" href="javascript:;" onclick="addnewcategory()">Add New Category
 									</a>
