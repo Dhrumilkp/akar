@@ -64,6 +64,7 @@ $route['deleteslider'] = 'Home/Home_controller/deleteslider';
 $route['logout'] = 'Home/Home_controller/logout';
 $route['editcategoryname'] = 'Home/Home_controller/editcategoryname';
 $route['deletecat'] = 'Home/Home_controller/deletecat';
+$route['uporder'] = 'Home/Home_controller/uporder';
 // About
 $route['about'] = 'Welcome/about';
 $route['aabout'] = 'Home/Home_controller/aabout';
