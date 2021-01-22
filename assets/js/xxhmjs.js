@@ -306,7 +306,7 @@ function editcat(caller)
 		'<form id="edit-cat-form">' +
 		'<input type="text" class="form-control" name="category_name" id="category_name" placeholder="Enter category name" style="text-transform: capitalize;" required>' +
 		'<div class="mt-2">' +
-		'<button type="submit" class="btn btn-outline-primary mr-1 mb-1" style="margin-top:2rem;" id="create_btn">Create</button>' +
+		'<button type="submit" class="btn btn-outline-primary mr-1 mb-1" style="margin-top:2rem;" id="create_btn">Update</button>' +
 		'</div>' +
 		'</form>' +
 		'</div>' +
