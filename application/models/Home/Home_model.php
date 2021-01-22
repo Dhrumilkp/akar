@@ -681,4 +681,16 @@ class Home_model extends CI_Model
             echo json_encode($res);
         }
     }
+    public function deletecat($postdata)
+    {
+        $this->db->where('id',$postdata['catid']);
+        $this->db->delete('a_cat');
+        if($this->db->affected_rows() > 0)
+        {
+            $res = array(
+                'status'    => 'success'
+            );
+            echo json_encode($res);
+        }
+    }
 }

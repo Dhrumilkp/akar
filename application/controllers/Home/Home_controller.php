@@ -156,4 +156,8 @@ class Home_controller extends CI_Controller
     {
         $this->Home_model->editcategoryname($_POST);
     }
+    public function deletecat()
+    {
+        $this->Home_model->deletecat($_POST);
+    }
 }

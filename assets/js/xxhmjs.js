@@ -338,3 +338,19 @@ $(document).on('submit','#edit-cat-form',function(e){
 		});
 	}
 })
+function deletecat(caller)
+{
+	var catid = $(caller).attr('data-id');
+	$.ajax({
+		type: "POST",
+		url: ""+url+"deletecat",
+		data: {catid:catid},
+		dataType: "json",
+		success: function (response) {
+			if (response.status == "success") {
+				alert("Category updated!");
+				location.reload();
+			}
+		}
+	});
+}
