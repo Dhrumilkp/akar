@@ -365,7 +365,7 @@ function changeorderup(caller)
 		success: function (response) {
 			console.log(response);
 			if (response.status == "success") {
-				alert("Category deleted!");
+				alert("Category Moved!");
 				location.reload();
 			}
 		}
