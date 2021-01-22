@@ -290,3 +290,51 @@ function deleteimgabout(caller)
 		}
 	});
 }
+var currentcatid;
+function editcat(caller)
+{
+	var catid = $(caller).attr('data-id');
+	currentcatid = catid;
+	var addnewcatmodel = '<div class="modal" id="edit_cat_model" tabindex="-1">' +
+		'<div class="modal-dialog">' +
+		'<div class="modal-content">' +
+		'<div class="modal-header">' +
+		'<h5 class="modal-title">Edit category name</h5>' +
+		'<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>' +
+		'</div>' +
+		'<div class="modal-body">' +
+		'<form id="edit-cat-form">' +
+		'<input type="text" class="form-control" name="category_name" id="category_name" placeholder="Enter category name" style="text-transform: capitalize;" required>' +
+		'<div class="mt-2">' +
+		'<button type="submit" class="btn btn-outline-primary mr-1 mb-1" style="margin-top:2rem;" id="create_btn">Create</button>' +
+		'</div>' +
+		'</form>' +
+		'</div>' +
+		'</div>' +
+		'</div>' +
+		'</div>';
+	$('#dynamic_data_model').html(addnewcatmodel);
+	$('#edit_cat_model').modal('show');
+}
+$(document).on('submit','#edit-cat-form',function(e){
+	e.preventDefault();
+	if($(this).valid())
+	{
+		var formData = new FormData($(this)[0]);
+		formData.append('currentcatid',currentcatid);
+		$.ajax({
+			type: "POST",
+			url: ""+url+"editcategoryname",
+			data: formData,
+			dataType: "json",
+			processData: false,
+            contentType: false,
+			success: function (response) {
+				if (response.status == "success") {
+					alert("Category updated!");
+					location.reload();
+				}
+			}
+		});
+	}
+})

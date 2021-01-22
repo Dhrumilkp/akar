@@ -668,4 +668,17 @@ class Home_model extends CI_Model
             echo json_encode($res);
         }
     }
+    public function editcategoryname($postdata)
+    {
+        $this->db->where('id',$postdata['currentcatid']);
+        $this->db->set('cat_name',$postdata['category_name']);
+        $this->db->update('a_cat');
+        if($this->db->affected_rows() > 0)
+        {
+            $res = array(
+                'status'    => 'success'
+            );
+            echo json_encode($res);
+        }
+    }
 }
