@@ -354,10 +354,20 @@ function deletecat(caller)
 		}
 	});
 }
-var currentorder;
-function changeorder(caller)
+function changeorderup(caller)
 {
-	currentorder = $(caller).attr('data-id');
-	$('#dynamic_data_model').html(addnewcatmodel);
-	$('#cat_order_model').modal('show');
+	currentid = $(caller).attr('data-id');
+	$.ajax({
+		type: "POST",
+		url: ""+url+"uporder",
+		data: {currentid : currentid},
+		dataType: "json",
+		success: function (response) {
+			console.log(response);
+			if (response.status == "success") {
+				alert("Category deleted!");
+				location.reload();
+			}
+		}
+	});
 }

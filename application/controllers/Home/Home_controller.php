@@ -160,4 +160,8 @@ class Home_controller extends CI_Controller
     {
         $this->Home_model->deletecat($_POST);
     }
+    public function uporder()
+    {
+        $this->Home_model->uporder($_POST);
+    }
 }

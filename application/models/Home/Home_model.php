@@ -693,4 +693,12 @@ class Home_model extends CI_Model
             echo json_encode($res);
         }
     }
+    public function uporder($postdata)
+    {
+        $this->db->where('id',$postdata['currentid']-1);
+        $query = $this->db->get('a_cat');
+        $result = $query->row_array();
+        $previous_id = $result['id'];
+        echo json_encode($previous_id);
+    }
 }
