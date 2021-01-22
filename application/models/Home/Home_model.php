@@ -29,7 +29,7 @@ class Home_model extends CI_Model
     }
     public function getcatdata()
     {
-        $this->db->orderby('show_order','asc');
+        $this->db->order_by('show_order','asc');
         $query = $this->db->get('a_cat');
         if($query->num_rows() > 0)
         {
