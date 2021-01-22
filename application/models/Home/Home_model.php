@@ -461,12 +461,14 @@ class Home_model extends CI_Model
             array_push($filepath,$final_name);
         }
         $data = array(
-            'book_title'    => $postdata['book_title'],
-            'book_cat'      => $postdata['book_cat'],
-            'book_desc'     => $postdata['book_desc'],
-            'book_cost'     => $postdata['book_cost'],
-            'book_amz_url'  => $postdata['book_amz_url'],
-            'created_at'    => time(),
+            'book_title'        => $postdata['book_title'],
+            'book_cat'          => $postdata['book_cat'],
+            'book_desc'         => $postdata['book_desc'],
+            'book_cost'         => $postdata['book_cost'],
+            'book_amz_url'      => $postdata['book_amz_url'],
+            'book_weight'       => $postdata['book_weight'],
+            'book_page_count'   => $postdata['book_page_count'],
+            'created_at'        => time(),
             'book_img_path'     => implode(',',$filepath)
         );
         $this->db->insert('a_book_data',$data);
@@ -587,6 +589,8 @@ class Home_model extends CI_Model
             'book_desc'     => $postdata['book_desc'],
             'book_cost'     => $postdata['book_cost'],
             'book_amz_url'  => $postdata['book_amz_url'],
+            'book_weight'       => $postdata['book_weight'],
+            'book_page_count'   => $postdata['book_page_count'],
             'created_at'    => time(),
             'book_img_path'     => implode(',',$filepath)
         );

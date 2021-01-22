@@ -153,6 +153,14 @@
                             <input class="form-control" name="book_cost" id="book_cost" type="number" placeholder="book cost" required>
                         </div>
                         <div class="form-group">
+                            <label for="name">Book Weight</label>
+                            <input class="form-control" name="book_weight" id="book_weight" type="number" placeholder="book page weight in grams" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Book Page Count</label>
+                            <input class="form-control" name="book_page_count" id="book_page_count" type="number" placeholder="book page count" required>
+                        </div>
+                        <div class="form-group">
                             <label for="name">Book Amazon URL</label>
                             <input class="form-control" name="book_amz_url" id="book_amz_url" type="url" placeholder="book url on amazon" required>
                         </div>
@@ -206,6 +214,14 @@
                         <div class="form-group">
                             <label for="name">Book Cost</label>
                             <input class="form-control" name="book_cost" id="book_cost_edit" type="number" placeholder="book cost" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Book Weight</label>
+                            <input class="form-control" name="book_weight" id="book_weight_edit" type="number" placeholder="book page weight in grams" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Book Page Count</label>
+                            <input class="form-control" name="book_page_count" id="book_page_count_edit" type="number" placeholder="book page count" required>
                         </div>
                         <div class="form-group">
                             <label for="name">Book Amazon URL</label>

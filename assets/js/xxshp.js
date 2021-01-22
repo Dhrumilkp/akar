@@ -73,6 +73,8 @@ function editbook(caller,bookid)
 			$('#book_desc_edit').val(response.book_desc);
 			$('#book_cost_edit').val(response.book_cost);
 			$('#book_amz_url_edit').val(response.book_amz_url);
+			$('#book_weight_edit').val(response.book_weight);
+			$('#book_page_count_edit').val(response.book_page_count);
 			$('#bookid').val(bookid);
 			$('#edit_book_model').modal('show');
 		}
