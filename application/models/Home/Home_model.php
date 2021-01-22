@@ -707,12 +707,6 @@ class Home_model extends CI_Model
         $result = $query->row_array();
         $previous_id = $result['id'];
         $currentid = $postdata['currentid'];
-        $res = array(
-            'previous_id' => $previous_id,
-            'current_id' => $currentid
-        );
-        echo json_encode($res);
-        die();
         $this->db->where('id',$currentid);
         $this->db->set('show_order',$previous_id);
         $this->db->update('a_cat');
