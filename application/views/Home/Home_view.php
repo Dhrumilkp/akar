@@ -68,7 +68,7 @@
 																<a href="javascript:;" onclick="changeorderup(this)" data-id="<?php echo $row['id'] ?>">Up</a>
 															<?
 														}
-														if($index != $category_count)
+														if($index+1 != $category_count)
 														{
 															?>
 																<a href="javascript:;" onclick="changeorderdown(this)" data-id="<?php echo $row['id'] ?>">Down</a>
