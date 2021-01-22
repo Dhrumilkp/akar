@@ -9,6 +9,12 @@ class Home_model extends CI_Model
         $this->db->insert('a_cat',$data);
         if($this->db->affected_rows() > 0)
         {
+            $id = $this->db->insert_id();
+
+            $this->db->where('id',$id);
+            $this->db->set('show_order',$id);
+            $this->db->update('a_cat');
+            
             $res = array(
                 'status' => 'success'
             );  
