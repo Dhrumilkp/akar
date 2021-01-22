@@ -719,4 +719,23 @@ class Home_model extends CI_Model
         );
         echo json_encode($res);
     }
+    public function downorder($postdata)
+    {
+        $this->db->where('id',$postdata['currentid']+1);
+        $query = $this->db->get('a_cat');
+        $result = $query->row_array();
+        $previous_id = $result['id'];
+        $currentid = $postdata['currentid'];
+        $this->db->where('id',$currentid);
+        $this->db->set('show_order',$previous_id);
+        $this->db->update('a_cat');
+        $this->db->where('id',$previous_id);
+        $this->db->set('show_order',$currentid);
+        $this->db->update('a_cat');
+
+        $res = array(
+            'status'    => 'success'
+        );
+        echo json_encode($res);
+    }
 }

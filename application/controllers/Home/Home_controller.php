@@ -164,4 +164,8 @@ class Home_controller extends CI_Controller
     {
         $this->Home_model->uporder($_POST);
     }
+    public function downorder()
+    {
+        $this->Home_model->downorder($_POST);
+    }
 }

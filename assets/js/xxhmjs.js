@@ -371,3 +371,20 @@ function changeorderup(caller)
 		}
 	});
 }
+function changeorderdown(caller)
+{
+	currentid = $(caller).attr('data-id');
+	$.ajax({
+		type: "POST",
+		url: ""+url+"downorder",
+		data: {currentid : currentid},
+		dataType: "json",
+		success: function (response) {
+			console.log(response);
+			if (response.status == "success") {
+				alert("Category Moved!");
+				location.reload();
+			}
+		}
+	});
+}
