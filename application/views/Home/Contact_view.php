@@ -126,8 +126,6 @@
 										}
 									}
 								?>
-							</div>
-							<div class="card-footer">
 								<a href="javascript:;" onclick="addemailaddress()">Add Email Address
                             	</a>
 							</div>
