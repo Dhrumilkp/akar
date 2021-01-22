@@ -695,6 +695,8 @@ class Home_model extends CI_Model
     }
     public function uporder($postdata)
     {
+        echo json_encode($postdata['currentid']);
+        die();
         $this->db->where('id',$postdata['currentid']-1);
         $query = $this->db->get('a_cat');
         $result = $query->row_array();
