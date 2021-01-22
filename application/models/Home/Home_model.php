@@ -488,7 +488,7 @@ class Home_model extends CI_Model
     }
     public function getbookdata()
     {
-        $sql = "SELECT a_book_data.id as book_id,a_book_data.book_title,a_book_data.book_cat,a_book_data.book_desc,a_book_data.book_cost,a_book_data.book_amz_url,a_book_data.book_img_path,a_cat.cat_name,a_book_data.book_weight,a_book_data.book_img_path FROM a_book_data JOIN a_cat ON a_book_data.book_cat = a_cat.id";
+        $sql = "SELECT a_book_data.id as book_id,a_book_data.book_title,a_book_data.book_cat,a_book_data.book_desc,a_book_data.book_cost,a_book_data.book_amz_url,a_book_data.book_img_path,a_cat.cat_name,a_book_data.book_weight,a_book_data.book_page_count FROM a_book_data JOIN a_cat ON a_book_data.book_cat = a_cat.id";
         $query = $this->db->query($sql);
         if($query->num_rows() > 0)
         {
@@ -502,7 +502,7 @@ class Home_model extends CI_Model
     }
     public function getbookdatahome()
     {
-        $sql = "SELECT a_book_data.id as book_id,a_book_data.book_title,a_book_data.book_cat,a_book_data.book_desc,a_book_data.book_cost,a_book_data.book_amz_url,a_book_data.book_img_path,a_cat.cat_name,a_book_data.book_weight,a_book_data.book_img_path FROM a_book_data JOIN a_cat ON a_book_data.book_cat = a_cat.id LIMIT 10";
+        $sql = "SELECT a_book_data.id as book_id,a_book_data.book_title,a_book_data.book_cat,a_book_data.book_desc,a_book_data.book_cost,a_book_data.book_amz_url,a_book_data.book_img_path,a_cat.cat_name,a_book_data.book_weight,a_book_data.book_page_count FROM a_book_data JOIN a_cat ON a_book_data.book_cat = a_cat.id LIMIT 10";
         $query = $this->db->query($sql);
         if($query->num_rows() > 0)
         {
@@ -516,7 +516,7 @@ class Home_model extends CI_Model
     }
     public function getbookdatabasedid($id)
     {
-        $sql = "SELECT a_book_data.id as book_id,a_book_data.book_title,a_book_data.book_cat,a_book_data.book_desc,a_book_data.book_cost,a_book_data.book_amz_url,a_book_data.book_img_path,a_cat.cat_name,a_book_data.book_weight,a_book_data.book_img_path FROM a_book_data JOIN a_cat ON a_book_data.book_cat = a_cat.id WHERE a_book_data.id ='".$id."'";
+        $sql = "SELECT a_book_data.id as book_id,a_book_data.book_title,a_book_data.book_cat,a_book_data.book_desc,a_book_data.book_cost,a_book_data.book_amz_url,a_book_data.book_img_path,a_cat.cat_name,a_book_data.book_weight,a_book_data.book_page_count FROM a_book_data JOIN a_cat ON a_book_data.book_cat = a_cat.id WHERE a_book_data.id ='".$id."'";
         $query = $this->db->query($sql);
         if($query->num_rows() > 0)
         {
@@ -530,7 +530,7 @@ class Home_model extends CI_Model
     }
     public function getallbooks()
     {
-        $sql = "SELECT a_book_data.id as book_id,a_book_data.book_title,a_book_data.book_cat,a_book_data.book_desc,a_book_data.book_cost,a_book_data.book_amz_url,a_book_data.book_img_path,a_cat.cat_name,a_book_data.book_weight,a_book_data.book_img_path FROM a_book_data JOIN a_cat ON a_book_data.book_cat = a_cat.id";
+        $sql = "SELECT a_book_data.id as book_id,a_book_data.book_title,a_book_data.book_cat,a_book_data.book_desc,a_book_data.book_cost,a_book_data.book_amz_url,a_book_data.book_img_path,a_cat.cat_name,a_book_data.book_weight,a_book_data.book_page_count FROM a_book_data JOIN a_cat ON a_book_data.book_cat = a_cat.id";
         $query = $this->db->query($sql);
         if($query->num_rows() > 0)
         {
@@ -544,7 +544,7 @@ class Home_model extends CI_Model
     }
     public function getcallbookscat($id)
     {
-        $sql = "SELECT a_book_data.id as book_id,a_book_data.book_title,a_book_data.book_cat,a_book_data.book_desc,a_book_data.book_cost,a_book_data.book_amz_url,a_book_data.book_img_path,a_cat.cat_name,a_book_data.book_weight,a_book_data.book_img_path FROM a_book_data JOIN a_cat ON a_book_data.book_cat = a_cat.id WHERE a_cat.id ='".$id."'";
+        $sql = "SELECT a_book_data.id as book_id,a_book_data.book_title,a_book_data.book_cat,a_book_data.book_desc,a_book_data.book_cost,a_book_data.book_amz_url,a_book_data.book_img_path,a_cat.cat_name,a_book_data.book_weight,a_book_data.book_page_count FROM a_book_data JOIN a_cat ON a_book_data.book_cat = a_cat.id WHERE a_cat.id ='".$id."'";
         $query = $this->db->query($sql);
         if($query->num_rows() > 0)
         {
@@ -606,7 +606,7 @@ class Home_model extends CI_Model
     }
     public function getbookdataedit($postdata)
     {
-        $sql = "SELECT a_book_data.id as book_id,a_book_data.book_title,a_book_data.book_cat,a_book_data.book_desc,a_book_data.book_cost,a_book_data.book_amz_url,a_book_data.book_img_path,a_cat.cat_name,a_book_data.book_weight,a_book_data.book_img_path FROM a_book_data JOIN a_cat ON a_book_data.book_cat = a_cat.id WHERE a_book_data.id ='".$postdata['bookid']."'";
+        $sql = "SELECT a_book_data.id as book_id,a_book_data.book_title,a_book_data.book_cat,a_book_data.book_desc,a_book_data.book_cost,a_book_data.book_amz_url,a_book_data.book_img_path,a_cat.cat_name,a_book_data.book_weight,a_book_data.book_page_count FROM a_book_data JOIN a_cat ON a_book_data.book_cat = a_cat.id WHERE a_book_data.id ='".$postdata['bookid']."'";
         $query = $this->db->query($sql);
         if($query->num_rows() > 0)
         {
