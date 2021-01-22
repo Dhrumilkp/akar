@@ -60,7 +60,8 @@
 													<li data-id="<?php echo $row['id'] ?>"><?php echo $row['cat_name']; ?></li>
 													<a href="javascript:;" onclick="editcat(this)" data-id="<?php echo $row['id'] ?>">edit category</a>
 													<a href="javascript:;" onclick="deletecat(this)" data-id="<?php echo $row['id'] ?>">delete category</a>
-													<a href="javascript:;" onclick="changeorder(this)" data-id="<?php echo $row['id'] ?>">change category order</a>
+													<a href="javascript:;" onclick="changeorderup(this)" data-id="<?php echo $row['id'] ?>">Up</a>
+													<a href="javascript:;" onclick="changeorderdown(this)" data-id="<?php echo $row['id'] ?>">Down</a>
 												<?
 											}
 										}

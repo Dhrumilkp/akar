@@ -354,3 +354,10 @@ function deletecat(caller)
 		}
 	});
 }
+var currentorder;
+function changeorder(caller)
+{
+	currentorder = $(caller).attr('data-id');
+	$('#dynamic_data_model').html(addnewcatmodel);
+	$('#cat_order_model').modal('show');
+}
