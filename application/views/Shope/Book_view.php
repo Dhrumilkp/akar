@@ -52,6 +52,8 @@
 							<li>Brands: <a href="<?php echo base_url(); ?>" class="list-value font-weight-bold"> Aakar Publication</a></li>
 							<li>Availability: <span class="list-value"> In Stock</span></li>
 							<li>Author name: <span class="list-value"> Suresh Prajapati</span></li>
+							<li>Book weight: <span class="list-value"> <?php echo $get_book_data['book_weight']; ?> grams</span></li>
+							<li>Book Page Count: <span class="list-value"> <?php echo $get_book_data['book_page_count']; ?></span></li>
 						</ul>
 						<div class="price-block">
 							<span class="price-new">₹<?php echo $get_book_data['book_cost']; ?></span>
