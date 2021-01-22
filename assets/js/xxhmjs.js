@@ -348,7 +348,7 @@ function deletecat(caller)
 		dataType: "json",
 		success: function (response) {
 			if (response.status == "success") {
-				alert("Category updated!");
+				alert("Category deleted!");
 				location.reload();
 			}
 		}
