@@ -54,16 +54,31 @@
 									<?php 
 										if(!empty($category_data))
 										{
+											$index = 0;
 											foreach($category_data as $row)
 											{
 												?>
 													<li data-id="<?php echo $row['id'] ?>"><?php echo $row['cat_name']; ?></li>
 													<a href="javascript:;" onclick="editcat(this)" data-id="<?php echo $row['id'] ?>">edit category</a>
 													<a href="javascript:;" onclick="deletecat(this)" data-id="<?php echo $row['id'] ?>">delete category</a>
-													<a href="javascript:;" onclick="changeorderup(this)" data-id="<?php echo $row['id'] ?>">Up</a>
-													<a href="javascript:;" onclick="changeorderdown(this)" data-id="<?php echo $row['id'] ?>">Down</a>
+													<?php 
+														if($index !== 0)
+														{
+															?>
+																<a href="javascript:;" onclick="changeorderup(this)" data-id="<?php echo $row['id'] ?>">Up</a>
+															<?
+														}
+														if($index < $category_count)
+														{
+															?>
+																<a href="javascript:;" onclick="changeorderdown(this)" data-id="<?php echo $row['id'] ?>">Down</a>
+															<?
+														}
+													?>
 												<?
+												$index++;
 											}
+											
 										}
 									?>
 								</ul>
