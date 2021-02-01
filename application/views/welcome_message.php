@@ -78,7 +78,7 @@
                                                                 <img src="uploads/Books/<?php echo $book_img[0]; ?>" alt="" style="border-radius:20px;">
                                                             </div>
                                                             <div class="price-block">
-                                                                <h3>
+                                                                <h3 style="overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;font-size: 14px;">
                                                                  <a href="<?php echo base_url(); ?>shop/book/<?php echo $row['book_id']; ?>"><?php echo $row['book_title']; ?></a>
                                                                 </h3>
                                                                 <span class="price">₹<?php echo $row['book_cost']; ?></span>
