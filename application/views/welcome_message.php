@@ -72,15 +72,13 @@
                                             $book_img = explode(',',$row['book_img_path'])
                                             ?>
                                                 <div class="single-slide" style="padding: 10px;">
-                                                    <div class="product-card">
+                                                    <div class="product-card"> 
                                                         <div class="product-card--body">
                                                             <div class="card-image">
                                                                 <img src="uploads/Books/<?php echo $book_img[0]; ?>" alt="" style="border-radius:20px;">
                                                             </div>
                                                             <div class="price-block">
-                                                                <h3>
-                                                                    <a href="<?php echo base_url(); ?>shop/book/<?php echo $row['book_id']; ?>"><?php echo $row['book_title']; ?></a>
-                                                                </h3>
+                                                                <a href="<?php echo base_url(); ?>shop/book/<?php echo $row['book_id']; ?>"><?php echo $row['book_title']; ?></a>
                                                                 <span class="price">₹<?php echo $row['book_cost']; ?></span>
                                                             </div>
                                                         </div>
