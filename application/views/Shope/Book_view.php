@@ -18,6 +18,21 @@
 				width:100% !important;
 			}
 		}
+		table {
+			font-family: arial, sans-serif;
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		td, th {
+			border: 1px solid #dddddd;
+			text-align: left;
+			padding: 8px;
+		}
+
+		tr:nth-child(even) {
+			background-color: #dddddd;
+		}
 	</style>
 </head>
 
@@ -64,16 +79,7 @@
 						</article>
 						<div class="add-to-cart-row">
 							<div class="add-cart-btn">
-								Payment option :<br>
-								1. Aakar Publication, A/c no. 002405500414 ICICI Bank, IFSC CODE : ICIC0000024 Panchvati Branch, Ahmedabad. (current Account)<br>
-
-								or<br>
-								2. Google pay :(suresh) 9426709778<br>
-
-								or <br>
-								3. Paytm<br>
-								7487048023 (nishith)<br>
-								<p>Before placing the order please reach us at <strong>9426709778</strong></p>
+								<button class="btn btn-outlined--primary largebtn-mobile" onclick="openmodal()">Buy Now</button>
 							</div>
 						</div>
 					</div>
@@ -81,10 +87,99 @@
 			</div>
 		</div>
 	</main>
+	<div class="modal" tabindex="-1" id="payment-modal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Payment Options</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<h6>Bank Transfers</h6>
+				<div class="bank-detals-wrapper" style="background:#fafafa;padding:20px;">
+					<table>
+						<tr>
+							<th>
+								Account Name
+							</th>
+							<th>
+								A/C Number
+							</th>
+							<th>
+								IFSC
+							</th>
+						</tr>
+						<tr>
+							<th>
+								Aakar Publication
+							</th>
+							<th>
+								002405500414
+							</th>
+							<th>
+								ICIC0000024
+							</th>
+						</tr>
+					</table>
+				</div>
+				<hr>
+				<h6>Google Pay</h6>
+				<div class="google-pay-wrapper" style="background:#fafafa;padding:20px;">
+					<table>
+						<tr>
+							<th>
+								Receiver Name
+							</th>
+							<th>
+								Mobile Number
+							</th>
+						</tr>
+						<tr>
+							<th>
+								Suresh Prajapati
+							</th>
+							<th>
+								+91-9426709778
+							</th>
+						</tr>
+					</table>		
+				</div>
+				<hr>
+				<h6>PayTm</h6>
+				<div class="google-pay-wrapper" style="background:#fafafa;padding:20px;">
+					<table>
+						<tr>
+							<th>
+								Receiver Name
+							</th>
+							<th>
+								Mobile Number
+							</th>
+						</tr>
+						<tr>
+							<th>
+								Nishith
+							</th>
+							<th>
+								+91-7487048023
+							</th>
+						</tr>
+					</table>		
+				</div>
+				<strong>Before placing the order please reach us at 9426709778</strong>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+			</div>
+			</div>
+		</div>
+	</div>
 	<?php $this->load->view('footer'); ?>
 	<!-- <script src="<?php echo base_url(); ?>theme/js/plugins.js"></script> -->
 	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous"></script>
 	<script src="<?php echo base_url(); ?>theme/js/ajax-mail.js"></script>
 	<!-- <script src="<?php echo base_url(); ?>theme/js/custom.js"></script> -->
@@ -104,7 +199,12 @@
 		$('.category-trigger').click(function(){
 			$('.category-nav').toggleClass('show');
 		});
-
+	</script>
+	<script>
+		function openmodal()
+		{
+			$('#payment-modal').modal('show');
+		}
 	</script>
 </body>
 
