@@ -147,7 +147,7 @@
 									foreach($get_contact_data as $row)
 									{
 										?>
-											<p><span class="text text-center w-100">+<?php echo $row['contact_number']; ?></span>
+											<p><span class="text text-center w-100" style="margin-right:5px;">+<?php echo $row['contact_number']; ?></span>
 											</p>
 										<?
 									}
