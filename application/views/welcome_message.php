@@ -21,7 +21,7 @@
             height:100%;
         }
         .single-slide{
-            background-size:contain;
+            background-size:contain !important;
             background-repeat:no-repeat;
         }
     }  
