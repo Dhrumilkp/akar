@@ -9,6 +9,23 @@
     <link rel="stylesheet" type="text/css" media="screen" href="theme/css/main.css" />
 	<link rel="shortcut icon" type="image/x-icon" href="theme/image/favicon.png">
 	<meta name="description" content="Aakar Publications - Sculpturing life">
+    <style>
+    @media only screen and (max-width: 600px) {
+        #hero_slider {
+           height:300px;
+        }
+        #sb_slider_wrapper{
+            height:100%;
+        }
+        .slick-list{
+            height:100%;
+        }
+        .single-slide{
+            background-size:contain;
+            background-repeat:no-repeat;
+        }
+    }  
+    </style>
 </head>
 
 <body>
@@ -17,15 +34,8 @@
         <!--=================================
         Hero Area
         ===================================== -->
-        <section class="hero-area hero-slider-1">
-            <div class="sb-slick-slider" data-slick-setting='{
-                            "autoplay": true,
-                            "fade": true,
-                            "autoplaySpeed": 3000,
-                            "speed": 3000,
-                            "slidesToShow": 1,
-                            "dots":true
-                            }'>
+        <section class="hero-area hero-slider-1" id="hero_slider">
+            <div class="sb-slick-slider" id="sb_slider_wrapper" data-slick-setting='{"autoplay": true,"fade": true,"autoplaySpeed": 3000,"speed": 3000,"slidesToShow": 1,"dots":true}'>
                 <?php 
                     if(!empty($get_slider_data))
                     {
