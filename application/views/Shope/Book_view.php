@@ -64,7 +64,16 @@
 						</article>
 						<div class="add-to-cart-row">
 							<div class="add-cart-btn">
-								<a href="<?php echo $get_book_data['book_amz_url']; ?>" class="btn btn-outlined--primary largebtn-mobile"><span class="plus-icon"><img src="<?php echo base_url(); ?>assets/img/amazon.svg" width="20" height="20"/></span>Buy From Amazon</a>
+								Payment option :<br>
+								1. Aakar Publication, A/c no. 002405500414 ICICI Bank, IFSC CODE : ICIC0000024 Panchvati Branch, Ahmedabad. (current Account)<br>
+
+								or<br>
+								2. Google pay :(suresh) 9426709778<br>
+
+								or <br>
+								3. Paytm<br>
+								7487048023 (nishith)<br>
+								<p>Before placing the order please reach us at <strong>9426709778</strong></p>
 							</div>
 						</div>
 					</div>
